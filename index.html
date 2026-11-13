@@ -67,7 +67,7 @@
   .menu nav a em{font-family:var(--serif);font-style:normal;font-size:14px;color:var(--hl);width:20px}
   .menu nav a:hover{color:var(--hl)}
   .menu.on nav a{opacity:1;transform:none}
-  .menu.on nav a:nth-child(2){transition-delay:.05s}.menu.on nav a:nth-child(3){transition-delay:.1s}.menu.on nav a:nth-child(4){transition-delay:.15s}.menu.on nav a:nth-child(5){transition-delay:.2s}
+  .menu.on nav a:nth-child(2){transition-delay:.05s}.menu.on nav a:nth-child(3){transition-delay:.1s}.menu.on nav a:nth-child(4){transition-delay:.15s}.menu.on nav a:nth-child(5){transition-delay:.2s}.menu.on nav a:nth-child(6){transition-delay:.25s}
   .menu .ct{margin-top:auto;display:grid;gap:9px}
   .menu .ct .row{display:grid;grid-template-columns:1fr 1fr;gap:9px}
   .menu .ct .row a{display:flex;align-items:center;justify-content:center;gap:8px;border:1px solid rgba(244,238,231,.4);padding:13px 6px;font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase}
@@ -113,6 +113,26 @@
   .why-row em{font-family:var(--head);font-style:normal;font-weight:600;font-size:13px;color:var(--accent)}
   .why-row h4{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;line-height:1.35}
   .why-row p{font-size:12.5px;line-height:1.55;color:var(--mute)}
+
+  /* TRABAJOS — портфолио: большие квадратные фото на всю ширину, листаются */
+  .works{padding:54px 0 0}
+  .works .hd{display:flex;justify-content:space-between;align-items:flex-end;padding:0 22px}
+  .works h2{font-size:50px}
+  .works .count{font-family:var(--head);font-weight:500;font-size:15px;letter-spacing:-.01em;color:var(--mute);font-variant-numeric:tabular-nums}
+  .works .count b{color:var(--accent);font-weight:600}
+  .works .sub{font-size:12.5px;color:var(--mute);margin-top:8px;padding:0 22px}
+  .wrail{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-top:20px}
+  .wrail::-webkit-scrollbar{display:none}
+  .wslide{flex:0 0 100%;scroll-snap-align:start;position:relative;aspect-ratio:1/1;max-width:100%}
+  .wslide img{width:100%;height:100%;object-fit:cover}
+  .wslide figcaption{position:absolute;left:14px;bottom:14px;background:var(--paper);color:var(--ink);font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:7px 11px}
+  .wnav{display:flex;align-items:center;gap:14px;padding:16px 22px 0}
+  .wnav .bar-p{flex:1;height:2px;background:var(--line);position:relative;overflow:hidden}
+  .wnav .bar-p i{position:absolute;left:0;top:0;bottom:0;background:var(--accent);transition:width .35s var(--ease)}
+  .wnav button{width:44px;height:44px;border-radius:50%;border:1px solid var(--ink);background:transparent;color:var(--ink);font-size:16px;cursor:pointer;display:grid;place-items:center;transition:background .25s,color .25s}
+  .wnav button:hover{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+  .wnav button:disabled{opacity:.3;cursor:default;background:transparent;color:var(--ink);border-color:var(--ink)}
+  .works .b{margin:18px 22px 0}
 
   /* SERVICIOS — S2 */
   .svc{background:var(--choco);color:var(--cream-on-dark);margin-top:54px;padding:40px 22px 34px}
@@ -223,10 +243,11 @@
 <div class="menu" id="menu" aria-hidden="true">
   <nav aria-label="Secciones">
     <a href="#sobre"><em>01</em>Sobre mí</a>
-    <a href="#servicios"><em>02</em>Servicios</a>
-    <a href="#opiniones"><em>03</em>Opiniones</a>
-    <a href="#preguntas"><em>04</em>Preguntas</a>
-    <a href="#contacto"><em>05</em>Contacto</a>
+    <a href="#trabajos"><em>02</em>Trabajos</a>
+    <a href="#servicios"><em>03</em>Servicios</a>
+    <a href="#opiniones"><em>04</em>Opiniones</a>
+    <a href="#preguntas"><em>05</em>Preguntas</a>
+    <a href="#contacto"><em>06</em>Contacto</a>
   </nav>
   <div class="ct">
     <a class="b b-rose" href="https://wa.me/5491133009473?text=Hola%20Daria!%20Quiero%20reservar%20un%20turno"><span style="display:flex;gap:10px;align-items:center"><svg class="ic"><use href="#wa"/></svg>Reservar turno</span><i>⟶</i></a>
@@ -261,7 +282,24 @@
       <div class="why-row"><img src="assets/stock/nude-almond.jpg" width="1000" height="1250" loading="lazy" alt="Esmaltado nude en uñas almendra"><div class="t"><em>02</em><h4>Dura 3–4 semanas</h4><p>Esmaltado bajo la cutícula que no se despega.</p></div></div>
       <div class="why-row"><img src="assets/stock/process-gloves-glitter.jpg" width="933" height="1400" loading="lazy" alt="Manicurista con guantes aplicando brillo"><div class="t"><em>03</em><h4>Higiene total</h4><p>Guantes y sobre esterilizado abierto delante de vos.</p></div></div>
     </div>
-    <a class="b b-dline rv" href="https://instagram.com/manicura_ru" style="margin-top:22px">Ver más trabajos <i>⟶</i></a>
+  </section>
+
+  <!-- TRABAJOS -->
+  <section class="works" id="trabajos" aria-label="Mis trabajos">
+    <div class="hd"><h2 class="H rv">Mis<br>trabajos</h2><p class="count" aria-live="polite"><b id="wnow">01</b> / 08</p></div>
+    <p class="sub">Deslizá para ver más ⟶</p>
+    <div class="wrail" id="wrail">
+      <figure class="wslide"><img src="assets/stock/milky-square.jpg" width="787" height="1400" loading="lazy" alt="Milky · cuadrada"><figcaption>Milky · cuadrada</figcaption></figure>
+      <figure class="wslide"><img src="assets/stock/nude-almond.jpg" width="1000" height="1250" loading="lazy" alt="Nude · almendra"><figcaption>Nude · almendra</figcaption></figure>
+      <figure class="wslide"><img src="assets/stock/french-long.jpg" width="1000" height="1334" loading="lazy" alt="Francesa XL"><figcaption>Francesa XL</figcaption></figure>
+      <figure class="wslide"><img src="assets/stock/nail-art-abstract.jpg" width="1000" height="1252" loading="lazy" alt="Nail art"><figcaption>Nail art</figcaption></figure>
+      <figure class="wslide"><img src="assets/stock/nude-palette.jpg" width="933" height="1400" loading="lazy" alt="Nude natural"><figcaption>Nude natural</figcaption></figure>
+      <figure class="wslide"><img src="assets/stock/process-choco-polish.jpg" width="934" height="1400" loading="lazy" alt="Chocolate"><figcaption>Chocolate</figcaption></figure>
+      <figure class="wslide"><img src="assets/stock/red-brush.jpg" width="1000" height="1333" loading="lazy" alt="Rojo clásico"><figcaption>Rojo clásico</figcaption></figure>
+      <figure class="wslide"><img src="assets/stock/process-gloves-glitter.jpg" width="933" height="1400" loading="lazy" alt="Rojo + glitter"><figcaption>Rojo + glitter</figcaption></figure>
+    </div>
+    <div class="wnav"><button id="wprev" aria-label="Anterior">⟵</button><span class="bar-p"><i id="wbar" style="width:12.50%"></i></span><button id="wnext" aria-label="Siguiente">⟶</button></div>
+    <a class="b b-dline" href="https://instagram.com/manicura_ru">Más en Instagram <i>⟶</i></a>
   </section>
 
   <!-- SERVICIOS -->
@@ -350,6 +388,14 @@
   // появление блоков при прокрутке
   const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }),{rootMargin:'0px 0px -8% 0px'});
   document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+  // портфолио: счётчик, полоска и стрелки
+  const wr=document.getElementById('wrail'), wn=document.getElementById('wnow'), wb=document.getElementById('wbar'),
+        wp=document.getElementById('wprev'), wx=document.getElementById('wnext'), wt=wr.children.length;
+  const wUpd=()=>{ const i=Math.round(wr.scrollLeft/wr.clientWidth); wn.textContent=String(i+1).padStart(2,'0'); wb.style.width=((i+1)/wt*100)+'%'; wp.disabled=i===0; wx.disabled=i===wt-1; };
+  wr.addEventListener('scroll',wUpd,{passive:true}); wUpd();
+  wp.addEventListener('click',()=>wr.scrollBy({left:-wr.clientWidth,behavior:'smooth'}));
+  wx.addEventListener('click',()=>wr.scrollBy({left:wr.clientWidth,behavior:'smooth'}));
 
   // точки под отзывами
   const rail=document.getElementById('rail'), dots=[...document.getElementById('pager').children];
