@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Manicura rusa en Villa Carlos Paz · Daria · @manicura_ru</title>
+<meta name="description" content="Manicura rusa en Villa Carlos Paz con Daria: técnica en seco, esmaltado bajo la cutícula que dura 3–4 semanas, instrumental esterilizado. Reservá por WhatsApp.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#2A1C16">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Manicura rusa en Villa Carlos Paz · Daria">
+<meta property="og:description" content="Uñas prolijas que duran 3–4 semanas. Reservá por WhatsApp.">
+<meta property="og:image" content="assets/stock/milky-square.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Inter+Tight:wght@400;500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/stock/milky-square.jpg" fetchpriority="high">
+<style>
+  :root{
+    /* база по референсам Лии: светлый фон, белые карточки, графитовые блоки; цвет только акцентом */
+    --choco:#1F1D1C; --choco2:#151413; --cream:#F3F1EE; --paper:#FFFFFF; --rose:#E9E5E0; --ink:#1E1B1A;
+    --mute:rgba(30,27,26,.62); --line:rgba(30,27,26,.14); --cl:rgba(255,255,255,.18);
+    --serif:'Cormorant Garamond', Georgia, serif; --head:'Inter Tight', 'Helvetica Neue', Arial, sans-serif; --sans:'Montserrat', system-ui, sans-serif;
+    --ease:cubic-bezier(.2,.7,.2,1);
+    --dk:21,20,19; --cream-on-dark:#F5F3F0; --cta-bg:#E8E4DF;
+    /* акцент: бордо (референсы 6, 11) */
+    --accent:#7D1D22; --on-accent:#FFFFFF; --rose2:#7D1D22; --hl:#D39A9C; --acc-d:#7D1D22; --on-acc-d:#FFFFFF;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{background:#DEDAD5;scroll-behavior:smooth;scroll-padding-top:60px}
+  body{font-family:var(--sans);color:var(--ink);background:var(--cream);max-width:480px;margin:0 auto;-webkit-font-smoothing:antialiased;overflow-x:hidden;box-shadow:0 0 80px rgba(var(--dk),.12)}
+  body.lock{overflow:hidden}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  :focus-visible{outline:2px solid var(--rose2);outline-offset:3px}
+  .H{font-family:var(--head);font-weight:500;letter-spacing:-.045em;line-height:.95}
+  .ic{width:18px;height:18px;flex:0 0 auto}
+  .b{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;border-radius:2px;transition:background .25s,color .25s}
+  .b i{font-style:normal;font-size:16px;letter-spacing:0;transition:transform .3s}
+  .b:hover i{transform:translateX(5px)}
+  .b-rose{background:var(--accent);color:var(--on-accent)}
+  .svc .b-rose,.menu .b-rose{background:var(--acc-d);color:var(--on-acc-d)}
+  .b-rose:hover{filter:brightness(1.06)}
+  .b-dline{border:1px solid var(--ink)}
+  .b-dline:hover{background:var(--ink);color:var(--cream)}
+  .stars{color:var(--rose2);letter-spacing:.2em;font-size:12px}
+  section{padding:54px 22px 0}
+
+  /* ШАПКА + МЕНЮ */
+  .bar{position:fixed;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;z-index:40;display:flex;align-items:center;gap:6px;padding:12px 14px 12px 20px;padding-top:max(12px,env(safe-area-inset-top));color:var(--ink);transition:background .35s,color .35s}
+  .bar.solid{background:color-mix(in srgb,var(--cream) 92%,transparent);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+  .bar.open{background:transparent;box-shadow:none;color:var(--cream-on-dark)}
+  .bar .logo{font-size:10px;letter-spacing:.24em;font-weight:500;margin-right:auto}
+  .bar a.ib,.bar button{width:40px;height:40px;display:grid;place-items:center;border-radius:50%;border:1px solid var(--line);background:transparent;color:inherit;cursor:pointer}
+  .bar.open a.ib{border-color:rgba(255,255,255,.3)}
+  .bar button{border-color:var(--accent);background:var(--accent);color:var(--on-accent)}
+  .bar.open button{border-color:var(--acc-d);background:var(--acc-d);color:var(--on-acc-d)}
+  .burger{width:18px;height:10px;position:relative}
+  .burger::before,.burger::after{content:"";position:absolute;left:0;right:0;height:1.5px;background:currentColor;transition:transform .35s var(--ease),top .35s var(--ease)}
+  .burger::before{top:0}.burger::after{top:8.5px}
+  .open .burger::before{top:4.25px;transform:rotate(45deg)}
+  .open .burger::after{top:4.25px;transform:rotate(-45deg)}
+
+  .menu{position:fixed;inset:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;z-index:30;background:var(--choco2);color:var(--cream-on-dark);padding:92px 22px 30px;display:flex;flex-direction:column;opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility .4s}
+  .menu.on{opacity:1;visibility:visible}
+  .menu nav a{display:flex;align-items:baseline;gap:14px;padding:12px 0;border-bottom:1px solid var(--cl);font-family:var(--head);font-weight:500;font-size:36px;letter-spacing:-.04em;opacity:0;transform:translateY(10px);transition:opacity .5s var(--ease),transform .5s var(--ease),color .2s}
+  .menu nav a em{font-family:var(--serif);font-style:normal;font-size:14px;color:var(--hl);width:20px}
+  .menu nav a:hover{color:var(--hl)}
+  .menu.on nav a{opacity:1;transform:none}
+  .menu.on nav a:nth-child(2){transition-delay:.05s}.menu.on nav a:nth-child(3){transition-delay:.1s}.menu.on nav a:nth-child(4){transition-delay:.15s}.menu.on nav a:nth-child(5){transition-delay:.2s}
+  .menu .ct{margin-top:auto;display:grid;gap:9px}
+  .menu .ct .row{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  .menu .ct .row a{display:flex;align-items:center;justify-content:center;gap:8px;border:1px solid rgba(244,238,231,.4);padding:13px 6px;font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase}
+  .menu .ct p{text-align:center;font-size:11px;opacity:.6;letter-spacing:.1em;margin-top:8px}
+
+  /* HERO — H3 «кино-кадр + бейдж» */
+  /* HERO — «журнальная обложка» + типографика как в референсе Miller Smith */
+  .hero{min-height:max(680px,100svh);padding:80px 22px 0;display:flex;flex-direction:column}
+  .hero h1{font-size:84px;line-height:.86;margin-top:6px;letter-spacing:-.055em}
+  .hero h1 em{font-style:normal;color:var(--accent)}
+  .hero .meta{display:grid;grid-template-columns:1fr 1fr;align-items:end;margin-top:20px;padding-top:14px;border-top:1px solid var(--line)}
+  .hero .meta div{display:flex;flex-direction:column;gap:4px;font-size:13px;line-height:1.3;color:var(--ink)}
+  .hero .meta div+div{text-align:right;border-left:1px solid var(--line);padding-left:14px}
+  .hero .meta b{font-family:var(--head);font-weight:600;font-size:34px;line-height:1;letter-spacing:-.04em;color:var(--accent)}
+  .hero .meta strong{font-family:var(--head);font-weight:600;font-size:20px;line-height:1.05;letter-spacing:-.03em}
+  .hero .q{font-family:var(--head);font-weight:500;font-size:21px;line-height:1.22;letter-spacing:-.02em;text-align:center;margin:0 -22px;padding:20px 26px 24px;background:var(--paper)}
+  .hero .q b{color:var(--accent);font-weight:500}
+  .hero .ph{margin:22px -22px 0;flex:1;min-height:340px;position:relative;overflow:hidden}
+  .hero .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%}
+  .hero .ph::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,0) 0 26px,rgba(255,255,255,.14) 26px 27px)}
+
+  /* SOBRE MÍ — A1 */
+  .sobre .top{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+  .sobre .top h2{font-size:56px;text-align:right;line-height:.92}
+  .sobre .top p{font-size:12px;line-height:1.55;color:var(--mute);margin-top:14px}
+  .frame{position:relative;aspect-ratio:3/4;padding:8px}
+  .frame img{width:100%;height:100%;object-fit:cover}
+  .frame i{position:absolute;width:16px;height:16px;border-color:var(--ink);border-style:solid}
+  .frame i:nth-of-type(1){top:0;left:0;border-width:1px 0 0 1px}
+  .frame i:nth-of-type(2){top:0;right:0;border-width:1px 1px 0 0}
+  .frame i:nth-of-type(3){bottom:0;left:0;border-width:0 0 1px 1px}
+  .frame i:nth-of-type(4){bottom:0;right:0;border-width:0 1px 1px 0}
+  .sobre h3{font-size:36px;line-height:1.12;margin:34px 0 14px}
+  .quote{background:var(--paper);padding:22px 20px 18px}
+  .quote::before{content:"“";font-family:var(--serif);font-size:64px;line-height:.5;color:var(--rose2);display:block;height:22px}
+  .quote p{font-size:13px;line-height:1.65}
+  .quote p b{font-weight:600;color:var(--rose2)}
+  .quote::after{content:"”";font-family:var(--serif);font-size:64px;line-height:.5;color:var(--rose2);display:block;text-align:right;height:18px;margin-top:6px}
+  .why-c{display:grid;grid-template-columns:1.1fr .9fr;background:var(--paper);margin-bottom:10px;min-height:160px}
+  .why-c .t{padding:16px}
+  .why-c em{font-family:var(--serif);font-style:normal;font-size:18px;color:var(--rose2)}
+  .why-c h4{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin:6px 0}
+  .why-c p{font-size:11.5px;line-height:1.5;color:var(--mute)}
+  .why-c .im{overflow:hidden}.why-c img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+  .why-c:hover img{transform:scale(1.05)}
+
+  /* SERVICIOS — S2 */
+  .svc{background:var(--choco);color:var(--cream-on-dark);margin-top:54px;padding:40px 22px 34px}
+  .svc .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:26px}
+  .svc .strip img{aspect-ratio:3/4;object-fit:cover;width:100%;height:auto}
+  .svc h2{font-size:50px;text-align:center}
+  .svc .sub{text-align:center;font-family:var(--serif);font-style:italic;font-size:16px;opacity:.75;margin-top:6px}
+  .svc .grp{font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--hl);margin:26px 0 4px}
+  .svc .row{padding:13px 0;border-bottom:1px solid var(--cl)}
+  .svc .row .t{display:flex;align-items:baseline;gap:8px}
+  .svc .row h3{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;white-space:nowrap}
+  .svc .row .dots{flex:1;border-bottom:1px dotted rgba(244,238,231,.35);transform:translateY(-3px)}
+  .svc .row b{font-family:var(--head);font-weight:500;letter-spacing:-.02em;font-size:21px;white-space:nowrap}
+  .svc .row p{font-size:10.5px;opacity:.6;margin-top:4px;line-height:1.45}
+  .svc .b{margin-top:18px}
+
+  /* OPINIONES — O3 */
+  .op h2{font-size:50px}
+  .rate{display:flex;align-items:center;gap:14px;margin-top:16px;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .rate b{font-family:var(--head);font-weight:500;letter-spacing:-.02em;font-size:46px;line-height:1}
+  .rate p{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);line-height:1.5}
+  .rail{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:18px 22px 4px;margin:0 -22px;scrollbar-width:none}
+  .rail::-webkit-scrollbar{display:none}
+  .card{flex:0 0 78%;scroll-snap-align:start;scroll-margin-left:22px;background:var(--paper)}
+  .card .im{aspect-ratio:4/3.4;overflow:hidden;position:relative}
+  .card img{width:100%;height:100%;object-fit:cover}
+  .card .tag{position:absolute;left:10px;bottom:10px;background:rgba(var(--dk),.7);color:var(--cream-on-dark);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;padding:5px 9px}
+  .card .t{padding:14px 16px 18px}
+  .card blockquote{font-family:var(--serif);font-style:italic;font-size:17px;line-height:1.3;margin-top:6px}
+  .card cite{display:block;margin-top:10px;font-style:normal;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+  .pager{display:flex;justify-content:center;gap:6px;margin-top:14px}
+  .pager i{width:6px;height:6px;border-radius:50%;background:var(--line);transition:.3s}
+  .pager i.on{background:var(--rose2);width:18px;border-radius:3px}
+
+  /* FAQ */
+  .faq h2{font-size:46px}
+  .faq .sub{font-size:12px;color:var(--mute);margin-top:6px}
+  .faq .list{margin-top:18px;border-top:1px solid var(--line)}
+  .faq details{border-bottom:1px solid var(--line)}
+  .faq summary{list-style:none;display:grid;grid-template-columns:28px 1fr 24px;gap:8px;align-items:center;padding:16px 0;cursor:pointer}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary em{font-family:var(--serif);font-style:normal;font-size:15px;color:var(--rose2)}
+  .faq summary h3{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;line-height:1.4}
+  .faq summary b{width:24px;height:24px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;font-weight:300;font-size:15px;color:var(--rose2);transition:transform .3s,background .3s}
+  .faq details[open] summary b{transform:rotate(45deg);background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+  .faq .ans{padding:0 32px 16px 36px;font-size:12.5px;line-height:1.6;color:var(--mute);animation:fade .35s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(-4px)}}
+  .faq .more{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px;background:var(--paper);padding:14px 16px;font-size:12px}
+  .faq .more a{font-size:9.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--rose2);border-bottom:1px solid var(--rose2);padding-bottom:3px}
+
+  /* CONTACTO — C3 */
+  .cta{background:var(--cta-bg);color:var(--ink);margin-top:54px;padding:40px 22px 30px;text-align:center}
+  .cta h2{font-size:46px}
+  .cta p{font-size:12.5px;line-height:1.55;margin-top:10px}
+  .cta .b{background:var(--accent);color:var(--on-accent);margin-top:18px}
+  .cta .b:hover{filter:brightness(1.1)}
+  .cta .b-alt{background:var(--choco2);color:var(--cream-on-dark);margin-top:8px}
+  .cta .b-alt:hover{background:var(--choco)}
+  .foot{background:var(--choco2);color:var(--cream-on-dark);padding:26px 22px 34px;padding-bottom:max(34px,env(safe-area-inset-bottom))}
+  .map{position:relative;height:150px;overflow:hidden;background:var(--choco)}
+  .map svg{position:absolute;inset:0;width:100%;height:100%}
+  .map .pin{position:absolute;left:50%;top:44%;transform:translate(-50%,-100%);background:var(--acc-d);color:var(--on-acc-d);font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:6px 10px;white-space:nowrap}
+  .map .pin::after{content:"";position:absolute;left:50%;bottom:-5px;transform:translateX(-50%) rotate(45deg);width:9px;height:9px;background:var(--acc-d)}
+  .foot .info{margin-top:18px;border-top:1px solid var(--cl);text-align:center}
+  .foot .info div{padding:12px 0;font-size:10px;letter-spacing:.12em;text-transform:uppercase;line-height:1.6;opacity:.85}
+  .foot .info b{display:block;font-family:var(--head);font-weight:500;letter-spacing:-.02em;font-size:15px;letter-spacing:.06em}
+  .slogan{font-family:var(--serif);font-style:italic;font-size:20px;text-align:center;color:var(--hl);margin-top:22px}
+  .copy{text-align:center;font-size:9.5px;letter-spacing:.14em;opacity:.4;margin-top:14px;text-transform:uppercase}
+
+  /* появление при прокрутке */
+  .rv{opacity:0;transform:translateY(16px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+  .rv.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .rv{opacity:1;transform:none;transition:none}
+    .menu,.menu nav a{transition:none}
+  }
+  .draft{position:relative;z-index:50;margin:0;background:var(--ink);color:var(--cream-on-dark);text-align:center;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;padding:7px 16px}
+  .draft~.bar{top:28px}
+  .bar.solid{top:0}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NailSalon","name":"Manicura rusa · Daria","description":"Manicura rusa en Villa Carlos Paz","telephone":"+5491133009473","address":{"@type":"PostalAddress","addressLocality":"Villa Carlos Paz","addressRegion":"Córdoba","addressCountry":"AR"},"sameAs":["https://instagram.com/manicura_ru"],"priceRange":"$20.000–$45.000"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"¿Qué es la manicura rusa?","acceptedAnswer":{"@type":"Answer","text":"Una técnica en seco, sin agua y sin alicate agresivo: limpio la cutícula con fresas finas y el esmalte entra bien al ras. El resultado se ve prolijo y crece sin que se note."}},
+{"@type":"Question","name":"¿Cuánto dura?","acceptedAnswer":{"@type":"Answer","text":"Entre 3 y 4 semanas sin despegarse."}},
+{"@type":"Question","name":"¿Duele?","acceptedAnswer":{"@type":"Answer","text":"No. Trabajo con cuidado y sin cortes."}}
+]}
+</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/><path d="M9 9.5c.3 2 2.5 4.2 4.5 4.5l1-1.2 1.6.8c-.2 1-1 1.6-2 1.5-3-.4-5.6-3-6-6-.1-1 .5-1.8 1.5-2l.8 1.6z"/></symbol>
+  <symbol id="ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".8" fill="currentColor"/></symbol>
+  <symbol id="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+</svg>
+
+<p class="draft">Borrador de diseño · precios, fotos y reseñas de ejemplo</p>
+<header class="bar" id="bar">
+  <a class="logo" href="#top">MANICURA_RU</a>
+  <a class="ib" href="https://wa.me/5491133009473?text=Hola%20Daria!%20Quiero%20reservar%20un%20turno" aria-label="WhatsApp"><svg class="ic"><use href="#wa"/></svg></a>
+  <a class="ib" href="https://instagram.com/manicura_ru" aria-label="Instagram"><svg class="ic"><use href="#ig"/></svg></a>
+  <button id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span class="burger"></span></button>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <nav aria-label="Secciones">
+    <a href="#sobre"><em>01</em>Sobre mí</a>
+    <a href="#servicios"><em>02</em>Servicios</a>
+    <a href="#opiniones"><em>03</em>Opiniones</a>
+    <a href="#preguntas"><em>04</em>Preguntas</a>
+    <a href="#contacto"><em>05</em>Contacto</a>
+  </nav>
+  <div class="ct">
+    <a class="b b-rose" href="https://wa.me/5491133009473?text=Hola%20Daria!%20Quiero%20reservar%20un%20turno"><span style="display:flex;gap:10px;align-items:center"><svg class="ic"><use href="#wa"/></svg>Reservar turno</span><i>⟶</i></a>
+    <div class="row">
+      <a href="https://instagram.com/manicura_ru"><svg class="ic"><use href="#ig"/></svg>Instagram</a>
+      <a href="#contacto"><svg class="ic"><use href="#pin"/></svg>Cómo llegar</a>
+    </div>
+    <p>+54 9 11 3300-9473 · Villa Carlos Paz</p>
+  </div>
+</div>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero" aria-label="Inicio">
+    <h1 class="H"><em>M</em>anicura<br>Rusa</h1>
+    <div class="meta"><div><b>+10 años</b>de experiencia</div><div><strong>Villa Carlos Paz</strong>Córdoba, Argentina</div></div>
+    <div class="ph"><img src="assets/stock/milky-square.jpg" width="787" height="1400" alt="Uñas color leche, forma cuadrada" fetchpriority="high"></div>
+    <p class="q">[Uñas <b>prolijas</b> que duran un mes entero. Técnica rusa, sin cortes.]</p>
+  </section>
+
+  <!-- SOBRE MÍ + TRABAJOS -->
+  <section class="sobre" id="sobre">
+    <div class="top">
+      <div class="rv"><h2 class="H">Sobre<br>mí</h2><p>Soy Daria, manicurista rusa en Villa Carlos Paz. Más de 10 años cuidando manos.</p></div>
+      <div class="frame rv"><img src="assets/stock/master-at-work.jpg" width="934" height="1400" loading="lazy" alt="Daria trabajando con guantes"><i></i><i></i><i></i><i></i></div>
+    </div>
+    <h3 class="H rv">Mi misión</h3>
+    <div class="quote rv"><p>Que salgas de mi estudio con <b>manos prolijas</b> y te olvides de la manicura <b>por un mes entero</b>. Trabajo despacio, con instrumental esterilizado y atención a cada detalle, porque <b>la belleza está en los detalles</b>.</p></div>
+    <h3 class="H rv">¿Por qué<br>elegirme?</h3>
+    <div class="why-c rv"><div class="t"><em>01/</em><h4>Técnica rusa</h4><p>Limpieza en seco, sin cortes: cutículas perfectas.</p></div><div class="im"><img src="assets/stock/nude-palette.jpg" width="933" height="1400" loading="lazy" alt="Uñas nude sobre muestrario"></div></div>
+    <div class="why-c rv"><div class="t"><em>02/</em><h4>Dura 3–4 semanas</h4><p>Esmaltado bajo la cutícula que no se despega.</p></div><div class="im"><img src="assets/stock/nude-almond.jpg" width="1000" height="1250" loading="lazy" alt="Esmaltado nude en uñas almendra"></div></div>
+    <div class="why-c rv"><div class="t"><em>03/</em><h4>Higiene total</h4><p>Guantes y sobre esterilizado abierto delante de vos.</p></div><div class="im"><img src="assets/stock/process-gloves-glitter.jpg" width="933" height="1400" loading="lazy" alt="Manicurista con guantes aplicando brillo"></div></div>
+    <a class="b b-dline rv" href="https://instagram.com/manicura_ru" style="margin-top:14px">Ver más trabajos <i>⟶</i></a>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="svc" id="servicios">
+    <div class="strip rv"><img src="assets/stock/milky-square.jpg" width="787" height="1400" loading="lazy" alt=""><img src="assets/stock/process-choco-polish.jpg" width="934" height="1400" loading="lazy" alt=""><img src="assets/stock/french-long.jpg" width="1000" height="1334" loading="lazy" alt=""></div>
+    <h2 class="H rv">Servicios</h2>
+    <p class="sub">precios en pesos argentinos</p>
+    <p class="grp">Manicura</p>
+    <div class="row"><div class="t"><h3>Rusa + semipermanente</h3><span class="dots"></span><b>$30.000</b></div><p>Limpieza en seco, esmaltado bajo cutícula · 90 min</p></div>
+    <div class="row"><div class="t"><h3>Rusa sin esmalte</h3><span class="dots"></span><b>$20.000</b></div><p>Cutículas prolijas, look natural · 60 min</p></div>
+    <p class="grp">Gel</p>
+    <div class="row"><div class="t"><h3>Kapping / nivelación</h3><span class="dots"></span><b>$35.000</b></div><p>Refuerzo de uña natural · 120 min</p></div>
+    <div class="row"><div class="t"><h3>Esculpidas</h3><span class="dots"></span><b>$45.000</b></div><p>Largo y forma a elección · 150 min</p></div>
+    <p class="grp">Extras</p>
+    <div class="row"><div class="t"><h3>Francesa</h3><span class="dots"></span><b>+$3.000</b></div></div>
+    <div class="row"><div class="t"><h3>Diseño / nail art</h3><span class="dots"></span><b>desde $2.000</b></div><p>por uña</p></div>
+    <div class="row"><div class="t"><h3>Retiro de material</h3><span class="dots"></span><b>$5.000</b></div></div>
+    <a class="b b-rose" href="https://wa.me/5491133009473?text=Hola%20Daria!%20Quiero%20reservar%20un%20turno">Reservar turno <i>⟶</i></a>
+  </section>
+
+  <!-- OPINIONES -->
+  <section class="op" id="opiniones">
+    <h2 class="H rv">Opiniones</h2>
+    <div class="rate rv"><b>5.0</b><div><span class="stars" aria-label="5 estrellas">★★★★★</span><p>[N] opiniones<br>en Google</p></div></div>
+    <div class="rail" id="rail">
+      <figure class="card"><div class="im"><img src="assets/stock/process-file.jpg" width="933" height="1400" loading="lazy" alt="Kapping en gel"><span class="tag">Kapping en gel</span></div><div class="t"><span class="stars">★★★★★</span><blockquote>Las uñas más lindas que tuve. ¡Y duran un montón!</blockquote><cite>Valentina · reseña de ejemplo</cite></div></figure>
+      <figure class="card"><div class="im"><img src="assets/stock/french-long.jpg" width="1000" height="1334" loading="lazy" alt="Esculpidas francesa larga"><span class="tag">Esculpidas</span></div><div class="t"><span class="stars">★★★★★</span><blockquote>Forma perfecta, exactamente lo que le pedí.</blockquote><cite>Sofía · reseña de ejemplo</cite></div></figure>
+      <figure class="card"><div class="im"><img src="assets/stock/nail-art-abstract.jpg" width="1000" height="1252" loading="lazy" alt="Nail art abstracto"><span class="tag">Nail art</span></div><div class="t"><span class="stars">★★★★★</span><blockquote>Daria tiene una paciencia y un pulso increíbles.</blockquote><cite>Camila · reseña de ejemplo</cite></div></figure>
+    </div>
+    <div class="pager" id="pager" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="preguntas">
+    <h2 class="H rv">Preguntas<br>frecuentes</h2>
+    <p class="sub">Todo lo que querés saber antes de tu turno</p>
+    <div class="list">
+      <details open><summary><em>01</em><h3>¿Qué es la manicura rusa?</h3><b>+</b></summary><p class="ans">Una técnica en seco, sin agua y sin alicate agresivo: limpio la cutícula con fresas finas y el esmalte entra bien al ras. El resultado se ve prolijo y crece sin que se note.</p></details>
+      <details><summary><em>02</em><h3>¿Cuánto dura?</h3><b>+</b></summary><p class="ans">Entre 3 y 4 semanas sin despegarse. Te recomiendo volver cada 3–4 semanas para mantener la forma.</p></details>
+      <details><summary><em>03</em><h3>¿Duele?</h3><b>+</b></summary><p class="ans">No. Trabajo con cuidado y sin cortes. Si algo te molesta, me avisás y ajusto.</p></details>
+      <details><summary><em>04</em><h3>¿Cómo esterilizás el instrumental?</h3><b>+</b></summary><p class="ans">Desinfección, esterilización en [autoclave / horno seco] y sobre sellado que abro delante de vos. Limas y pulidores son descartables.</p></details>
+      <details><summary><em>05</em><h3>¿Cómo reservo y cómo pago?</h3><b>+</b></summary><p class="ans">Reservás por WhatsApp. Pagás en el turno en [efectivo / transferencia / Mercado Pago].</p></details>
+      <details><summary><em>06</em><h3>¿Y si no puedo ir?</h3><b>+</b></summary><p class="ans">Avisame con [24 h] de anticipación y reprogramamos sin problema.</p></details>
+    </div>
+    <div class="more"><span>¿Tenés otra pregunta?</span><a href="https://wa.me/5491133009473?text=Hola%20Daria!%20Tengo%20una%20pregunta">Escribime ⟶</a></div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="cta" id="contacto">
+    <h2 class="H rv">¿Reservamos<br>tu turno?</h2>
+    <p>Escribime por WhatsApp y te paso los horarios libres.</p>
+    <a class="b" href="https://wa.me/5491133009473?text=Hola%20Daria!%20Quiero%20reservar%20un%20turno"><span style="display:flex;gap:10px;align-items:center"><svg class="ic"><use href="#wa"/></svg>Escribir a Daria</span><i>⟶</i></a>
+    <a class="b b-alt" href="https://instagram.com/manicura_ru"><span style="display:flex;gap:10px;align-items:center"><svg class="ic"><use href="#ig"/></svg>Instagram</span><i>⟶</i></a>
+    <a class="b b-alt" href="https://maps.google.com/?q=Villa+Carlos+Paz,+C%C3%B3rdoba"><span style="display:flex;gap:10px;align-items:center"><svg class="ic"><use href="#pin"/></svg>Cómo llegar</span><i>⟶</i></a>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="map" role="img" aria-label="Mapa: Villa Carlos Paz, Córdoba">
+    <svg viewBox="0 0 346 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g stroke="rgba(244,238,231,.12)" stroke-width="7" fill="none"><path d="M-10 40 L360 20"/><path d="M-10 110 L360 95"/><path d="M60 -10 L90 160"/><path d="M210 -10 L240 160"/><path d="M300 -10 L320 160"/></g><g stroke="rgba(244,238,231,.06)" stroke-width="3" fill="none"><path d="M-10 75 L360 58"/><path d="M140 -10 L165 160"/></g></svg>
+    <span class="pin">Daria · Villa Carlos Paz</span>
+  </div>
+  <div class="info">
+    <div><b>Villa Carlos Paz</b>Córdoba · Argentina</div>
+  </div>
+  <p class="slogan">La belleza está en los detalles</p>
+  <p class="copy">© 2026 Manicura rusa · Daria</p>
+</footer>
+
+<script>
+  // шапка становится плотной после первого экрана
+  const bar=document.getElementById('bar');
+  const onScroll=()=>bar.classList.toggle('solid',scrollY>40);
+  addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  // меню-сэндвич
+  const btn=document.getElementById('burger'), menu=document.getElementById('menu');
+  const setMenu=open=>{
+    menu.classList.toggle('on',open); bar.classList.toggle('open',open); document.body.classList.toggle('lock',open);
+    btn.setAttribute('aria-expanded',open); btn.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú'); menu.setAttribute('aria-hidden',!open);
+  };
+  btn.addEventListener('click',()=>setMenu(!menu.classList.contains('on')));
+  menu.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+  addEventListener('keydown',e=>{ if(e.key==='Escape') setMenu(false); });
+
+  // появление блоков при прокрутке
+  const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }),{rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+  // точки под отзывами
+  const rail=document.getElementById('rail'), dots=[...document.getElementById('pager').children];
+  rail.addEventListener('scroll',()=>{
+    const i=Math.round(rail.scrollLeft/(rail.children[0].offsetWidth+10));
+    dots.forEach((d,j)=>d.classList.toggle('on',j===i));
+  },{passive:true});
+
+  // в FAQ открыт только один вопрос
+  const qs=document.querySelectorAll('.faq details');
+  qs.forEach(d=>d.addEventListener('toggle',()=>{ if(d.open) qs.forEach(o=>{ if(o!==d) o.open=false; }); }));
+</script>
+</body>
+</html>
