@@ -106,38 +106,29 @@
   .quote p{font-size:13px;line-height:1.65}
   .quote p b{font-weight:600;color:var(--rose2)}
   .quote::after{content:"”";font-family:var(--serif);font-size:64px;line-height:.5;color:var(--rose2);display:block;text-align:right;height:18px;margin-top:6px}
-  .why-list{border-top:1px solid var(--line)}
-  .why-row{display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
-  .why-row img{width:96px;height:96px;object-fit:cover}
-  .why-row .t{display:grid;gap:5px}
-  .why-row em{font-family:var(--head);font-style:normal;font-weight:600;font-size:13px;color:var(--accent)}
-  .why-row h4{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;line-height:1.35}
-  .why-row p{font-size:12.5px;line-height:1.55;color:var(--mute)}
+  .why-big{margin:0 -22px;position:relative}
+  .why-big img{width:100%;aspect-ratio:4/3.3;object-fit:cover;height:auto}
+  .why-list{list-style:none;margin-top:6px}
+  .why-list li{display:grid;grid-template-columns:48px 1fr;gap:6px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .why-list li em{font-family:var(--head);font-style:normal;font-weight:600;font-size:28px;line-height:1;letter-spacing:-.04em;color:var(--accent)}
+  .why-list li .t{display:grid;gap:5px}
+  .why-list li h4{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;line-height:1.35}
+  .why-list li p{font-size:12.5px;line-height:1.55;color:var(--mute)}
 
   /* TRABAJOS — портфолио: большие квадратные фото на всю ширину, листаются */
   .works{padding:54px 0 0}
-  .works .hd{display:flex;justify-content:space-between;align-items:flex-end;padding:0 22px}
   .works h2{font-size:50px}
-  .works .count{font-family:var(--head);font-weight:500;font-size:15px;letter-spacing:-.01em;color:var(--mute);font-variant-numeric:tabular-nums}
-  .works .count b{color:var(--accent);font-weight:600}
   .works .sub{font-size:12.5px;color:var(--mute);margin-top:8px;padding:0 22px}
   .wrail{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-top:20px}
   .wrail::-webkit-scrollbar{display:none}
   .wslide{flex:0 0 100%;scroll-snap-align:start;position:relative;aspect-ratio:1/1;max-width:100%}
-  .wslide img{width:100%;height:100%;object-fit:cover}
+  .wslide img{width:100%;height:100%;object-fit:cover;-webkit-user-drag:none;user-select:none}
+  @media (hover:hover) and (pointer:fine){.wrail{cursor:pointer}}
   .wslide figcaption{position:absolute;left:14px;bottom:14px;background:var(--paper);color:var(--ink);font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:7px 11px}
-  .wnav{display:flex;align-items:center;gap:14px;padding:16px 22px 0}
-  .wnav .bar-p{flex:1;height:2px;background:var(--line);position:relative;overflow:hidden}
-  .wnav .bar-p i{position:absolute;left:0;top:0;bottom:0;background:var(--accent);transition:width .35s var(--ease)}
-  .wnav button{width:44px;height:44px;border-radius:50%;border:1px solid var(--ink);background:transparent;color:var(--ink);font-size:16px;cursor:pointer;display:grid;place-items:center;transition:background .25s,color .25s}
-  .wnav button:hover{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
-  .wnav button:disabled{opacity:.3;cursor:default;background:transparent;color:var(--ink);border-color:var(--ink)}
   .works .b{margin:18px 22px 0}
 
   /* SERVICIOS — S2 */
   .svc{background:var(--choco);color:var(--cream-on-dark);margin-top:54px;padding:40px 22px 34px}
-  .svc .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:26px}
-  .svc .strip img{aspect-ratio:3/4;object-fit:cover;width:100%;height:auto}
   .svc h2{font-size:50px;text-align:center}
   .svc .sub{text-align:center;font-family:var(--serif);font-style:italic;font-size:16px;opacity:.75;margin-top:6px}
   .svc .grp{font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--hl);margin:26px 0 4px}
@@ -154,18 +145,13 @@
   .rate{display:flex;align-items:center;gap:14px;margin-top:16px;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .rate b{font-family:var(--head);font-weight:500;letter-spacing:-.02em;font-size:46px;line-height:1}
   .rate p{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);line-height:1.5}
-  .rail{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:18px 22px 4px;margin:0 -22px;scrollbar-width:none}
-  .rail::-webkit-scrollbar{display:none}
-  .card{flex:0 0 78%;scroll-snap-align:start;scroll-margin-left:22px;background:var(--paper)}
-  .card .im{aspect-ratio:4/3.4;overflow:hidden;position:relative}
-  .card img{width:100%;height:100%;object-fit:cover}
-  .card .tag{position:absolute;left:10px;bottom:10px;background:rgba(var(--dk),.7);color:var(--cream-on-dark);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;padding:5px 9px}
-  .card .t{padding:14px 16px 18px}
-  .card blockquote{font-family:var(--serif);font-style:italic;font-size:17px;line-height:1.3;margin-top:6px}
-  .card cite{display:block;margin-top:10px;font-style:normal;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
-  .pager{display:flex;justify-content:center;gap:6px;margin-top:14px}
-  .pager i{width:6px;height:6px;border-radius:50%;background:var(--line);transition:.3s}
-  .pager i.on{background:var(--rose2);width:18px;border-radius:3px}
+
+  .rev-list{margin-top:8px}
+  .rev{display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+  .rev img{width:96px;height:96px;object-fit:cover}
+  .rev .t{display:grid;gap:4px}
+  .rev blockquote{font-family:var(--serif);font-style:italic;font-size:17px;line-height:1.28}
+  .rev cite{font-style:normal;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
 
   /* FAQ */
   .faq h2{font-size:46px}
@@ -277,16 +263,17 @@
     <h3 class="H rv">Mi misión</h3>
     <div class="quote rv"><p>Que salgas de mi estudio con <b>manos prolijas</b> y te olvides de la manicura <b>por un mes entero</b>. Trabajo despacio, con instrumental esterilizado y atención a cada detalle, porque <b>la belleza está en los detalles</b>.</p></div>
     <h3 class="H rv">¿Por qué<br>elegirme?</h3>
-    <div class="why-list rv">
-      <div class="why-row"><img src="assets/stock/nude-palette.jpg" width="933" height="1400" loading="lazy" alt="Uñas nude sobre muestrario"><div class="t"><em>01</em><h4>Técnica rusa</h4><p>Limpieza en seco, sin cortes: cutículas perfectas.</p></div></div>
-      <div class="why-row"><img src="assets/stock/nude-almond.jpg" width="1000" height="1250" loading="lazy" alt="Esmaltado nude en uñas almendra"><div class="t"><em>02</em><h4>Dura 3–4 semanas</h4><p>Esmaltado bajo la cutícula que no se despega.</p></div></div>
-      <div class="why-row"><img src="assets/stock/process-gloves-glitter.jpg" width="933" height="1400" loading="lazy" alt="Manicurista con guantes aplicando brillo"><div class="t"><em>03</em><h4>Higiene total</h4><p>Guantes y sobre esterilizado abierto delante de vos.</p></div></div>
-    </div>
+    <div class="why-big rv"><img src="assets/stock/process-gloves-glitter.jpg" width="933" height="1400" loading="lazy" alt="Manicurista con guantes aplicando brillo"></div>
+    <ol class="why-list">
+      <li class="rv"><em>01</em><div class="t"><h4>Técnica rusa</h4><p>Limpieza en seco, sin cortes: cutículas perfectas.</p></div></li>
+      <li class="rv"><em>02</em><div class="t"><h4>Dura 3–4 semanas</h4><p>Esmaltado bajo la cutícula que no se despega.</p></div></li>
+      <li class="rv"><em>03</em><div class="t"><h4>Higiene total</h4><p>Guantes y sobre esterilizado abierto delante de vos.</p></div></li>
+    </ol>
   </section>
 
   <!-- TRABAJOS -->
   <section class="works" id="trabajos" aria-label="Mis trabajos">
-    <div class="hd"><h2 class="H rv">Mis<br>trabajos</h2><p class="count" aria-live="polite"><b id="wnow">01</b> / 08</p></div>
+    <h2 class="H rv" style="padding:0 22px">Mis<br>trabajos</h2>
     <p class="sub">Deslizá para ver más ⟶</p>
     <div class="wrail" id="wrail">
       <figure class="wslide"><img src="assets/stock/milky-square.jpg" width="787" height="1400" loading="lazy" alt="Milky · cuadrada"><figcaption>Milky · cuadrada</figcaption></figure>
@@ -298,13 +285,11 @@
       <figure class="wslide"><img src="assets/stock/red-brush.jpg" width="1000" height="1333" loading="lazy" alt="Rojo clásico"><figcaption>Rojo clásico</figcaption></figure>
       <figure class="wslide"><img src="assets/stock/process-gloves-glitter.jpg" width="933" height="1400" loading="lazy" alt="Rojo + glitter"><figcaption>Rojo + glitter</figcaption></figure>
     </div>
-    <div class="wnav"><button id="wprev" aria-label="Anterior">⟵</button><span class="bar-p"><i id="wbar" style="width:12.50%"></i></span><button id="wnext" aria-label="Siguiente">⟶</button></div>
     <a class="b b-dline" href="https://instagram.com/manicura_ru">Más en Instagram <i>⟶</i></a>
   </section>
 
   <!-- SERVICIOS -->
   <section class="svc" id="servicios">
-    <div class="strip rv"><img src="assets/stock/milky-square.jpg" width="787" height="1400" loading="lazy" alt=""><img src="assets/stock/process-choco-polish.jpg" width="934" height="1400" loading="lazy" alt=""><img src="assets/stock/french-long.jpg" width="1000" height="1334" loading="lazy" alt=""></div>
     <h2 class="H rv">Servicios</h2>
     <p class="sub">precios en pesos argentinos</p>
     <p class="grp">Manicura</p>
@@ -324,12 +309,11 @@
   <section class="op" id="opiniones">
     <h2 class="H rv">Opiniones</h2>
     <div class="rate rv"><b>5.0</b><div><span class="stars" aria-label="5 estrellas">★★★★★</span><p>[N] opiniones<br>en Google</p></div></div>
-    <div class="rail" id="rail">
-      <figure class="card"><div class="im"><img src="assets/stock/process-file.jpg" width="933" height="1400" loading="lazy" alt="Kapping en gel"><span class="tag">Kapping en gel</span></div><div class="t"><span class="stars">★★★★★</span><blockquote>Las uñas más lindas que tuve. ¡Y duran un montón!</blockquote><cite>Valentina · reseña de ejemplo</cite></div></figure>
-      <figure class="card"><div class="im"><img src="assets/stock/french-long.jpg" width="1000" height="1334" loading="lazy" alt="Esculpidas francesa larga"><span class="tag">Esculpidas</span></div><div class="t"><span class="stars">★★★★★</span><blockquote>Forma perfecta, exactamente lo que le pedí.</blockquote><cite>Sofía · reseña de ejemplo</cite></div></figure>
-      <figure class="card"><div class="im"><img src="assets/stock/nail-art-abstract.jpg" width="1000" height="1252" loading="lazy" alt="Nail art abstracto"><span class="tag">Nail art</span></div><div class="t"><span class="stars">★★★★★</span><blockquote>Daria tiene una paciencia y un pulso increíbles.</blockquote><cite>Camila · reseña de ejemplo</cite></div></figure>
+    <div class="rev-list">
+      <figure class="rev rv"><img src="assets/stock/process-file.jpg" width="933" height="1400" loading="lazy" alt="Kapping en gel"><div class="t"><span class="stars" aria-label="5 estrellas">★★★★★</span><blockquote>Las uñas más lindas que tuve. ¡Y duran un montón!</blockquote><cite>Valentina · Kapping en gel · reseña de ejemplo</cite></div></figure>
+      <figure class="rev rv"><img src="assets/stock/french-long.jpg" width="1000" height="1334" loading="lazy" alt="Esculpidas francesa larga"><div class="t"><span class="stars" aria-label="5 estrellas">★★★★★</span><blockquote>Forma perfecta, exactamente lo que le pedí.</blockquote><cite>Sofía · Esculpidas · reseña de ejemplo</cite></div></figure>
+      <figure class="rev rv"><img src="assets/stock/nail-art-abstract.jpg" width="1000" height="1252" loading="lazy" alt="Nail art abstracto"><div class="t"><span class="stars" aria-label="5 estrellas">★★★★★</span><blockquote>Daria tiene una paciencia y un pulso increíbles.</blockquote><cite>Camila · Nail art · reseña de ejemplo</cite></div></figure>
     </div>
-    <div class="pager" id="pager" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
   </section>
 
   <!-- FAQ -->
@@ -389,20 +373,18 @@
   const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }),{rootMargin:'0px 0px -8% 0px'});
   document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 
-  // портфолио: счётчик, полоска и стрелки
-  const wr=document.getElementById('wrail'), wn=document.getElementById('wnow'), wb=document.getElementById('wbar'),
-        wp=document.getElementById('wprev'), wx=document.getElementById('wnext'), wt=wr.children.length;
-  const wUpd=()=>{ const i=Math.round(wr.scrollLeft/wr.clientWidth); wn.textContent=String(i+1).padStart(2,'0'); wb.style.width=((i+1)/wt*100)+'%'; wp.disabled=i===0; wx.disabled=i===wt-1; };
-  wr.addEventListener('scroll',wUpd,{passive:true}); wUpd();
-  wp.addEventListener('click',()=>wr.scrollBy({left:-wr.clientWidth,behavior:'smooth'}));
-  wx.addEventListener('click',()=>wr.scrollBy({left:wr.clientWidth,behavior:'smooth'}));
+  // портфолио: на телефоне листается пальцем; на компьютере клик по правой половине фото — вперёд, по левой — назад
+  const wr=document.getElementById('wrail');
+  if(matchMedia('(hover:hover) and (pointer:fine)').matches){
+    wr.addEventListener('click',e=>{
+      const r=wr.getBoundingClientRect(), back=e.clientX<r.left+r.width/2;
+      const max=wr.scrollWidth-wr.clientWidth;
+      let x=wr.scrollLeft+(back?-1:1)*wr.clientWidth;
+      if(x>max+2) x=0; if(x<-2) x=max;
+      wr.scrollTo({left:x,behavior:'smooth'});
+    });
+  }
 
-  // точки под отзывами
-  const rail=document.getElementById('rail'), dots=[...document.getElementById('pager').children];
-  rail.addEventListener('scroll',()=>{
-    const i=Math.round(rail.scrollLeft/(rail.children[0].offsetWidth+10));
-    dots.forEach((d,j)=>d.classList.toggle('on',j===i));
-  },{passive:true});
 
   // в FAQ открыт только один вопрос
   const qs=document.querySelectorAll('.faq details');
