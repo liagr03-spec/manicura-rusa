@@ -106,13 +106,13 @@
   .quote p{font-size:13px;line-height:1.65}
   .quote p b{font-weight:600;color:var(--rose2)}
   .quote::after{content:"”";font-family:var(--serif);font-size:64px;line-height:.5;color:var(--rose2);display:block;text-align:right;height:18px;margin-top:6px}
-  .why-c{display:grid;grid-template-columns:1.1fr .9fr;background:var(--paper);margin-bottom:10px;min-height:160px}
-  .why-c .t{padding:16px}
-  .why-c em{font-family:var(--serif);font-style:normal;font-size:18px;color:var(--rose2)}
-  .why-c h4{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin:6px 0}
-  .why-c p{font-size:11.5px;line-height:1.5;color:var(--mute)}
-  .why-c .im{overflow:hidden}.why-c img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
-  .why-c:hover img{transform:scale(1.05)}
+  .why-list{border-top:1px solid var(--line)}
+  .why-row{display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+  .why-row img{width:96px;height:96px;object-fit:cover}
+  .why-row .t{display:grid;gap:5px}
+  .why-row em{font-family:var(--head);font-style:normal;font-weight:600;font-size:13px;color:var(--accent)}
+  .why-row h4{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;line-height:1.35}
+  .why-row p{font-size:12.5px;line-height:1.55;color:var(--mute)}
 
   /* SERVICIOS — S2 */
   .svc{background:var(--choco);color:var(--cream-on-dark);margin-top:54px;padding:40px 22px 34px}
@@ -256,10 +256,12 @@
     <h3 class="H rv">Mi misión</h3>
     <div class="quote rv"><p>Que salgas de mi estudio con <b>manos prolijas</b> y te olvides de la manicura <b>por un mes entero</b>. Trabajo despacio, con instrumental esterilizado y atención a cada detalle, porque <b>la belleza está en los detalles</b>.</p></div>
     <h3 class="H rv">¿Por qué<br>elegirme?</h3>
-    <div class="why-c rv"><div class="t"><em>01/</em><h4>Técnica rusa</h4><p>Limpieza en seco, sin cortes: cutículas perfectas.</p></div><div class="im"><img src="assets/stock/nude-palette.jpg" width="933" height="1400" loading="lazy" alt="Uñas nude sobre muestrario"></div></div>
-    <div class="why-c rv"><div class="t"><em>02/</em><h4>Dura 3–4 semanas</h4><p>Esmaltado bajo la cutícula que no se despega.</p></div><div class="im"><img src="assets/stock/nude-almond.jpg" width="1000" height="1250" loading="lazy" alt="Esmaltado nude en uñas almendra"></div></div>
-    <div class="why-c rv"><div class="t"><em>03/</em><h4>Higiene total</h4><p>Guantes y sobre esterilizado abierto delante de vos.</p></div><div class="im"><img src="assets/stock/process-gloves-glitter.jpg" width="933" height="1400" loading="lazy" alt="Manicurista con guantes aplicando brillo"></div></div>
-    <a class="b b-dline rv" href="https://instagram.com/manicura_ru" style="margin-top:14px">Ver más trabajos <i>⟶</i></a>
+    <div class="why-list rv">
+      <div class="why-row"><img src="assets/stock/nude-palette.jpg" width="933" height="1400" loading="lazy" alt="Uñas nude sobre muestrario"><div class="t"><em>01</em><h4>Técnica rusa</h4><p>Limpieza en seco, sin cortes: cutículas perfectas.</p></div></div>
+      <div class="why-row"><img src="assets/stock/nude-almond.jpg" width="1000" height="1250" loading="lazy" alt="Esmaltado nude en uñas almendra"><div class="t"><em>02</em><h4>Dura 3–4 semanas</h4><p>Esmaltado bajo la cutícula que no se despega.</p></div></div>
+      <div class="why-row"><img src="assets/stock/process-gloves-glitter.jpg" width="933" height="1400" loading="lazy" alt="Manicurista con guantes aplicando brillo"><div class="t"><em>03</em><h4>Higiene total</h4><p>Guantes y sobre esterilizado abierto delante de vos.</p></div></div>
+    </div>
+    <a class="b b-dline rv" href="https://instagram.com/manicura_ru" style="margin-top:22px">Ver más trabajos <i>⟶</i></a>
   </section>
 
   <!-- SERVICIOS -->
