@@ -106,14 +106,14 @@
   .quote p{font-size:13px;line-height:1.65}
   .quote p b{font-weight:600;color:var(--rose2)}
   .quote::after{content:"”";font-family:var(--serif);font-size:64px;line-height:.5;color:var(--rose2);display:block;text-align:right;height:18px;margin-top:6px}
-  .why-big{margin:0 -22px;position:relative}
-  .why-big img{width:100%;aspect-ratio:4/3.3;object-fit:cover;height:auto}
-  .why-list{list-style:none;margin-top:6px}
-  .why-list li{display:grid;grid-template-columns:48px 1fr;gap:6px;padding:16px 0;border-bottom:1px solid var(--line)}
-  .why-list li em{font-family:var(--head);font-style:normal;font-weight:600;font-size:28px;line-height:1;letter-spacing:-.04em;color:var(--accent)}
-  .why-list li .t{display:grid;gap:5px}
-  .why-list li h4{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;line-height:1.35}
-  .why-list li p{font-size:12.5px;line-height:1.55;color:var(--mute)}
+  .why-chess{display:grid;gap:14px;margin-top:4px}
+  .why-chess li{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:center}
+  .why-chess li:nth-child(even) .t{order:2}
+  .why-chess li img{width:100%;aspect-ratio:4/5;object-fit:cover;height:auto}
+  .why-chess .t{display:grid;gap:7px}
+  .why-chess em{font-family:var(--head);font-style:normal;font-weight:600;font-size:34px;line-height:1;letter-spacing:-.04em;color:var(--accent)}
+  .why-chess h4{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;line-height:1.35}
+  .why-chess p{font-size:12.5px;line-height:1.55;color:var(--mute)}
 
   /* TRABAJOS — портфолио: большие квадратные фото на всю ширину, листаются */
   .works{padding:54px 0 0}
@@ -263,11 +263,10 @@
     <h3 class="H rv">Mi misión</h3>
     <div class="quote rv"><p>Que salgas de mi estudio con <b>manos prolijas</b> y te olvides de la manicura <b>por un mes entero</b>. Trabajo despacio, con instrumental esterilizado y atención a cada detalle, porque <b>la belleza está en los detalles</b>.</p></div>
     <h3 class="H rv">¿Por qué<br>elegirme?</h3>
-    <div class="why-big rv"><img src="assets/stock/process-gloves-glitter.jpg" width="933" height="1400" loading="lazy" alt="Manicurista con guantes aplicando brillo"></div>
-    <ol class="why-list">
-      <li class="rv"><em>01</em><div class="t"><h4>Técnica rusa</h4><p>Limpieza en seco, sin cortes: cutículas perfectas.</p></div></li>
-      <li class="rv"><em>02</em><div class="t"><h4>Dura 3–4 semanas</h4><p>Esmaltado bajo la cutícula que no se despega.</p></div></li>
-      <li class="rv"><em>03</em><div class="t"><h4>Higiene total</h4><p>Guantes y sobre esterilizado abierto delante de vos.</p></div></li>
+    <ol class="why-chess">
+      <li class="rv"><div class="t"><em>01</em><h4>Técnica rusa</h4><p>Limpieza en seco, sin cortes: cutículas perfectas.</p></div><img src="assets/stock/nude-palette.jpg" width="933" height="1400" loading="lazy" alt="Uñas nude sobre muestrario"></li>
+      <li class="rv"><div class="t"><em>02</em><h4>Dura 3–4 semanas</h4><p>Esmaltado bajo la cutícula que no se despega.</p></div><img src="assets/stock/nude-almond.jpg" width="1000" height="1250" loading="lazy" alt="Esmaltado nude en uñas almendra"></li>
+      <li class="rv"><div class="t"><em>03</em><h4>Higiene total</h4><p>Guantes y sobre esterilizado abierto delante de vos.</p></div><img src="assets/stock/process-gloves-glitter.jpg" width="933" height="1400" loading="lazy" alt="Manicurista con guantes aplicando brillo"></li>
     </ol>
   </section>
 
