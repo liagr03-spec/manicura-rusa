@@ -118,6 +118,30 @@
   .why-chess h4{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;line-height:1.35}
   .why-chess p{font-size:12.5px;line-height:1.55;color:var(--mute)}
 
+  /* HIGIENE — сильный акцент: шоколадный блок сразу после «¿Por qué elegirme?» */
+  .hig{background:var(--choco);color:var(--cream-on-dark);margin-top:40px;padding:44px 22px 40px}
+  .hig .kick{font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--hl);font-weight:600}
+  .hig h2{font-size:46px;margin:12px 0 12px}
+  .hig h2 em{font-style:normal;color:var(--hl)}
+  .hig .lead{font-size:13px;line-height:1.6;opacity:.75}
+  .hig .big{display:flex;align-items:center;gap:16px;margin:24px 0 8px;padding:18px 0;border-top:1px solid var(--cl);border-bottom:1px solid var(--cl)}
+  .hig .big b{font-family:var(--head);font-weight:600;font-size:52px;line-height:1;letter-spacing:-.05em;color:var(--hl)}
+  .hig .big span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;line-height:1.5;font-weight:600}
+  .hig ol{list-style:none;position:relative;padding-left:46px;margin-top:22px}
+  .hig ol::before{content:"";position:absolute;left:15px;top:6px;bottom:6px;border-left:1px solid var(--cl)}
+  .hig li{position:relative;padding-bottom:20px}
+  .hig li:last-child{padding-bottom:0}
+  .hig li i{position:absolute;left:-46px;top:0;width:31px;height:31px;border-radius:50%;border:1px solid rgba(211,154,156,.55);background:var(--choco);display:grid;place-items:center;font:600 11.5px var(--head);font-style:normal;color:var(--hl)}
+  .hig li h3{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin:7px 0 5px}
+  .hig li p{font-size:12.5px;line-height:1.55;opacity:.72}
+  .hig .vs{display:grid;grid-template-columns:1fr 1fr;margin-top:28px}
+  .hig .vs div{padding:18px 16px;background:var(--paper);color:var(--ink)}
+  .hig .vs div+div{background:var(--accent);color:#fff}
+  .hig .vs small{font-size:9px;letter-spacing:.26em;text-transform:uppercase;font-weight:600;color:var(--accent)}
+  .hig .vs div+div small{color:#fff;opacity:.8}
+  .hig .vs strong{display:block;font-family:var(--head);font-weight:600;font-size:21px;letter-spacing:-.03em;margin:8px 0 6px}
+  .hig .vs p{font-size:11.5px;line-height:1.5;opacity:.8}
+
   /* TRABAJOS — портфолио: большие квадратные фото на всю ширину, листаются */
   .works{padding:54px 0 0}
   .works h2{font-size:50px}
@@ -259,11 +283,12 @@
 <div class="menu" id="menu" aria-hidden="true">
   <nav aria-label="Secciones">
     <a href="#sobre"><em>01</em>Sobre mí</a>
-    <a href="#trabajos"><em>02</em>Trabajos</a>
-    <a href="#servicios"><em>03</em>Servicios</a>
-    <a href="#opiniones"><em>04</em>Opiniones</a>
-    <a href="#preguntas"><em>05</em>Preguntas</a>
-    <a href="#contacto"><em>06</em>Contacto</a>
+    <a href="#higiene"><em>02</em>Higiene</a>
+    <a href="#trabajos"><em>03</em>Trabajos</a>
+    <a href="#servicios"><em>04</em>Servicios</a>
+    <a href="#opiniones"><em>05</em>Opiniones</a>
+    <a href="#preguntas"><em>06</em>Preguntas</a>
+    <a href="#contacto"><em>07</em>Contacto</a>
   </nav>
   <div class="ct">
     <a class="b b-rose" href="https://wa.me/5491133009473?text=Hola%20Daria!%20Quiero%20reservar%20un%20turno"><span style="display:flex;gap:10px;align-items:center"><svg class="ic"><use href="#wa"/></svg>Reservar turno</span><i>⟶</i></a>
@@ -299,8 +324,27 @@
     <ol class="why-chess">
       <li class="rv"><div class="t"><em>01</em><h4>Manicura combinada</h4><p>Alicate y torno: cutículas prolijas y perfectas.</p></div><img src="assets/stock/nude-square.jpg" width="1054" height="1400" loading="lazy" alt="Manicura rusa nude, forma cuadrada"></li>
       <li class="rv"><div class="t"><em>02</em><h4>Dura 3–4 semanas</h4><p>Esmaltado bajo la cutícula que no se despega.</p></div><img src="assets/stock/bordo-almond.jpg" width="1054" height="1400" loading="lazy" alt="Esmaltado bordó en uñas almendra"></li>
-      <li class="rv"><div class="t"><em>03</em><h4>Higiene total</h4><p>Guantes y sobre esterilizado abierto delante de vos.</p></div><img src="assets/stock/process-gloves-glitter.jpg" width="933" height="1400" loading="lazy" alt="Manicurista con guantes aplicando brillo"></li>
     </ol>
+  </section>
+
+  <!-- HIGIENE -->
+  <section class="hig" id="higiene" aria-label="Higiene">
+    <p class="kick rv">03 · Higiene</p>
+    <h2 class="H rv">Higiene <em>sin</em> excepciones</h2>
+    <p class="lead rv">Trabajo con el protocolo que se usa en Rusia: cada clienta recibe instrumental esterilizado y materiales nuevos.</p>
+    <div class="big rv"><b>100%</b><span>del instrumental esterilizado<br>antes de cada clienta</span></div>
+    <ol>
+      <li class="rv"><i>01</i><h3>Desinfección</h3><p>Apenas termina el turno, el instrumental va a una solución desinfectante.</p></li>
+      <li class="rv"><i>02</i><h3>Limpieza</h3><p>Lavo cada herramienta con cepillo para quitar todo resto antes de esterilizar.</p></li>
+      <li class="rv"><i>03</i><h3>Esterilización</h3><p>Alicates, empujadores y fresas se esterilizan con calor en sobres sellados.</p></li>
+      <li class="rv"><i>04</i><h3>Sobre abierto delante tuyo</h3><p>Abro el sobre esterilizado frente a vos, al empezar tu turno.</p></li>
+      <li class="rv"><i>05</i><h3>Lima nueva para vos</h3><p>La base de la lima es metálica y el abrasivo es descartable: cada clienta tiene el suyo.</p></li>
+      <li class="rv"><i>06</i><h3>Guantes, mascarilla y todo desinfectado</h3><p>Trabajo siempre con guantes y mascarilla. Uso toallas descartables y desinfecto la mesa y tus manos.</p></li>
+    </ol>
+    <div class="vs rv">
+      <div><small>Alcohol</small><strong>Desinfecta</strong><p>Reduce gérmenes en la superficie, pero no los elimina por completo.</p></div>
+      <div><small>Esterilización</small><strong>Elimina todo</strong><p>Bacterias, hongos y virus. Es lo que uso con todo el instrumental.</p></div>
+    </div>
   </section>
 
   <!-- TRABAJOS -->
@@ -376,7 +420,7 @@
       <details open><summary><em>01</em><h3>¿Qué es la manicura rusa?</h3><b>+</b></summary><p class="ans">Es una manicura en seco y combinada: trabajo la cutícula con torno y fresas finas y la recorto con alicate. Así el esmalte entra bien al ras. El resultado se ve prolijo y crece sin que se note.</p></details>
       <details><summary><em>02</em><h3>¿Cuánto dura?</h3><b>+</b></summary><p class="ans">Entre 3 y 4 semanas sin despegarse. Te recomiendo volver cada 3–4 semanas para mantener la forma.</p></details>
       <details><summary><em>03</em><h3>¿Duele?</h3><b>+</b></summary><p class="ans">No. Trabajo con cuidado, sin lastimar la piel. Si algo te molesta, me avisás y ajusto.</p></details>
-      <details><summary><em>04</em><h3>¿Cómo esterilizás el instrumental?</h3><b>+</b></summary><p class="ans">Desinfección, esterilización en [autoclave / horno seco] y sobre sellado que abro delante de vos. Limas y pulidores son descartables.</p></details>
+      <details><summary><em>04</em><h3>¿Cómo esterilizás el instrumental?</h3><b>+</b></summary><p class="ans">Desinfección, limpieza y esterilización con calor en sobre sellado, que abro delante de vos. La base de la lima es metálica y el abrasivo es descartable: cada clienta tiene el suyo.</p></details>
       <details><summary><em>05</em><h3>¿Cómo reservo y cómo pago?</h3><b>+</b></summary><p class="ans">Reservás por WhatsApp. Pagás en el turno en [efectivo / transferencia / Mercado Pago].</p></details>
       <details><summary><em>06</em><h3>¿Y si no puedo ir?</h3><b>+</b></summary><p class="ans">Avisame con [24 h] de anticipación y reprogramamos sin problema.</p></details>
     </div>
