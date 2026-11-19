@@ -81,7 +81,18 @@ Nombre: {nombre}
 | Retiro de material (solo retiro) | $8.000 | Solo el retiro |
 | Esculpidas | $40.000 | Uñas esculpidas |
 
-### Diseño y extras
+### Pedicura
+
+| Servicio | Precio | Qué incluye |
+|---|---|---|
+| Pedicura Smart con esmaltado | $50.000 | Tratamiento completo de plantas y dedos + esmaltado semipermanente |
+| Pedicura Smart | $35.000 | Tratamiento completo de plantas y dedos (sin esmaltado) |
+| Belleza de dedos | $15.000 | Tratamiento de dedos sin esmaltado |
+| Belleza de dedos con esmaltado | $25.000 | Tratamiento de dedos + esmaltado |
+| Retiro de material (solo retiro) | $7.000 | Solo retiro de material en pies |
+| Esculpido de una uña | $3.000 | Reconstrucción / extensión de una uña del pie |
+
+### Diseño y extras (manos o pies)
 
 | Servicio | Precio | Qué incluye |
 |---|---|---|
