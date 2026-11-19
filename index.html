@@ -243,9 +243,10 @@
   .cta .b-alt{background:var(--choco2);color:var(--cream-on-dark);margin-top:8px}
   .cta .b-alt:hover{background:var(--choco)}
   .foot{background:var(--choco2);color:var(--cream-on-dark);padding:26px 22px 34px;padding-bottom:max(34px,env(safe-area-inset-bottom))}
-  .map{position:relative;display:block;height:260px;border-radius:14px;overflow:hidden;background:#1C1918;border:1px solid var(--cl)}
+  .map{position:relative;display:block;height:290px;border-radius:14px;overflow:hidden;background:#e5e3df;border:1px solid var(--cl)}
   .map svg.map-fb{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-  #zone-map{position:absolute;inset:0;width:100%;height:100%;z-index:1;background:transparent}
+  #zone-map{position:absolute;inset:0;width:100%;height:100%;z-index:1;background:#e5e3df}
+  .leaflet-container img{max-width:none!important;max-height:none!important}
   .map .pin{position:absolute;left:50%;top:12px;transform:translateX(-50%);z-index:450;background:rgba(21,20,19,.88);backdrop-filter:blur(6px);color:var(--cream-on-dark);font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:7px 12px;border-radius:999px;border:1px solid rgba(211,154,156,.35);white-space:nowrap;pointer-events:none}
   .map-zoom{position:absolute;left:10px;bottom:10px;z-index:450;display:flex;gap:6px}
   .map-zoom button{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.22);background:rgba(21,20,19,.88);backdrop-filter:blur(6px);color:var(--cream-on-dark);font-family:var(--head);font-size:18px;line-height:1;display:grid;place-items:center;cursor:pointer;touch-action:manipulation;transition:background .2s,border-color .2s}
@@ -544,11 +545,12 @@
   addEventListener('load',()=>{
     if(!window.L || !document.getElementById('zone-map')) return;
     const center=[-31.4305,-64.5065];
-    const map=L.map('zone-map',{center,zoom:12,minZoom:10,maxZoom:16,zoomControl:false,attributionControl:false,scrollWheelZoom:false});
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{subdomains:'abcd',maxZoom:19}).addTo(map);
-    L.circle(center,{radius:1700,color:'#7D1D22',weight:2,dashArray:'6 5',fillColor:'#7D1D22',fillOpacity:.2}).addTo(map);
+    const map=L.map('zone-map',{center,zoom:13,minZoom:10,maxZoom:18,zoomControl:false,attributionControl:false,scrollWheelZoom:true});
+    L.tileLayer('https://mt{s}.google.com/vt/lyrs=m&hl=es&x={x}&y={y}&z={z}',{subdomains:['0','1','2','3'],maxZoom:19}).addTo(map);
+    L.circle(center,{radius:1600,color:'#7D1D22',weight:2,dashArray:'6 5',fillColor:'#7D1D22',fillOpacity:.18}).addTo(map);
     document.getElementById('zm-in').addEventListener('click',()=>map.zoomIn());
     document.getElementById('zm-out').addEventListener('click',()=>map.zoomOut());
+    setTimeout(()=>map.invalidateSize(),250);
   });
 </script>
 </body>
