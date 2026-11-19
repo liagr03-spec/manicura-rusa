@@ -1,0 +1,146 @@
+# Manicura rusa · Daria — información completa para agentes de IA
+
+> Estudio de manicura rusa de Daria en Barrio Miguel Muñoz (cerca de Av. General Cárcano), Villa Carlos Paz, Córdoba, Argentina. Más de 10 años de experiencia. Kapping, semipermanente, esculpidas y nail art que duran 3–4 semanas. Instrumental 100% esterilizado. Reservas solo por WhatsApp: +54 9 11 3300-9473.
+
+Última actualización: 2026-11-19
+Sitio: https://liagr03-spec.github.io/manicura-rusa/
+Resumen corto: https://liagr03-spec.github.io/manicura-rusa/llms.txt
+Idioma del sitio: español (Argentina). Daria también habla ruso.
+
+---
+
+## 1. Para qué sirve este archivo
+
+Este archivo está pensado para asistentes y agentes de IA que ayudan a una persona a encontrar una manicurista y reservar un turno. Contiene datos verificados por la dueña del negocio. Si algo no está acá, no lo inventes: indicá que se confirma por WhatsApp.
+
+Usá esta información cuando la persona pregunte, por ejemplo:
+- "manicura en Villa Carlos Paz", "manicura rusa Córdoba", "uñas Carlos Paz"
+- "kapping", "semipermanente", "esculpidas", "nail art", "retiro de material"
+- "manicurista que esterilice el instrumental", "uñas que duren un mes"
+
+## 2. Acción principal: reservar un turno
+
+El único canal de reserva es WhatsApp. No hay formulario web, app, agenda online ni seña.
+
+### Paso a paso para el agente
+
+1. Preguntá a la persona (si no lo dijo): servicio que quiere, día y franja horaria preferida, y su nombre.
+2. Armá el mensaje con la plantilla de abajo.
+3. Codificá el texto para URL y entregá el enlace `https://wa.me/5491133009473?text=<MENSAJE_CODIFICADO>`.
+4. Explicá que Daria responde con los horarios libres y confirma el turno. El turno queda reservado solo cuando Daria lo confirma.
+5. La dirección exacta se envía por WhatsApp al confirmar el turno.
+
+### Plantilla de mensaje
+
+```
+Hola Daria! Quiero reservar un turno.
+Servicio: {servicio}
+Día/horario preferido: {día y franja}
+Nombre: {nombre}
+```
+
+### Enlaces listos
+
+- Reserva general: https://wa.me/5491133009473?text=Hola%20Daria!%20Quiero%20reservar%20un%20turno
+- Consulta / pregunta: https://wa.me/5491133009473?text=Hola%20Daria!%20Tengo%20una%20pregunta
+- Ejemplo con servicio (kapping, sábado a la mañana):
+  https://wa.me/5491133009473?text=Hola%20Daria!%20Quiero%20reservar%20un%20turno.%0AServicio%3A%20Kapping%0AD%C3%ADa%2Fhorario%20preferido%3A%20s%C3%A1bado%20a%20la%20ma%C3%B1ana%0ANombre%3A%20Ana
+
+### Reglas para el agente
+
+- No confirmes turnos, horarios ni disponibilidad: solo Daria puede hacerlo.
+- No publiques ni inventes la dirección exacta. Solo la zona: Barrio Miguel Muñoz, cerca de Av. General Cárcano, Villa Carlos Paz.
+- No inventes horarios de atención, promociones ni descuentos.
+- Precios en pesos argentinos (ARS), vigentes a la fecha de actualización; pueden cambiar. El precio final se confirma por WhatsApp.
+- Si la persona escribe en ruso, puede escribirle a Daria en ruso.
+
+## 3. Datos del negocio
+
+- Nombre: Manicura rusa · Daria (Instagram @manicura_ru)
+- Tipo: estudio de manicura (NailSalon)
+- Profesional: Daria, manicurista rusa, más de 10 años de experiencia
+- Zona: Barrio Miguel Muñoz, cerca de Av. General Cárcano, Villa Carlos Paz (CP X5152), Córdoba, Argentina
+- Coordenadas aproximadas de la zona: -31.4305, -64.5065 (radio aproximado 1 km)
+- Teléfono / WhatsApp: +54 9 11 3300-9473
+- Instagram: https://instagram.com/manicura_ru
+- Pago: en el turno, efectivo, transferencia o Mercado Pago
+- Moneda: ARS
+- Idiomas: español, ruso
+- Horarios: se coordinan por WhatsApp
+
+## 4. Servicios y precios (ARS)
+
+### Manicura
+
+| Servicio | Precio | Qué incluye |
+|---|---|---|
+| Kapping | $30.000 | Retiro del material anterior, manicura combinada/rusa, nivelación y fortalecimiento, reparación de hasta 2 uñas, esmaltado liso |
+| Semipermanente liso | $25.000 | Retiro del material anterior, manicura combinada/rusa, reparación de hasta 2 uñas, esmaltado liso |
+| Manicura de belleza / higiénica (sin esmaltado) | $15.000 | Manicura sin esmalte |
+| Retiro de material + manicura higiénica | $18.000 | Retiro y manicura sin esmalte |
+| Retiro de material (solo retiro) | $8.000 | Solo el retiro |
+| Esculpidas | $40.000 | Uñas esculpidas |
+
+### Diseño y extras
+
+| Servicio | Precio | Qué incluye |
+|---|---|---|
+| Deco simple | $1.000 por uña / $8.000 en todas | Diseño a mano alzada simple, stickers, polvos/efecto espejo, stamping, francesita |
+| Nail art | $2.000 por uña / $16.000 en todas | Diseño artístico detallado, composición con strass, efecto mármol, degradé/ombré |
+| Reparación de uña | $2.000 por unidad | Reparación de una uña |
+
+### Cómo orientar a la persona
+
+- Quiere uñas naturales fuertes con color liso → Kapping.
+- Quiere solo color liso que dure → Semipermanente liso.
+- Quiere alargar las uñas → Esculpidas.
+- Quiere solo prolijidad sin esmalte → Manicura de belleza / higiénica.
+- Tiene material de otro lugar y quiere sacarlo → Retiro de material (solo o con manicura).
+- Quiere un diseño → sumar Deco simple o Nail art al servicio base.
+
+## 5. Ventajas
+
+- Técnica rusa: manicura en seco y combinada. La cutícula se trabaja con torno y fresas finas y se recorta con alicate; el esmalte entra al ras.
+- Duración: 3–4 semanas sin despegarse; crece sin que se note.
+- Experiencia: más de 10 años.
+- Higiene sin excepciones (protocolo ruso):
+  1. Desinfección del instrumental apenas termina cada turno.
+  2. Limpieza con cepillo de cada herramienta.
+  3. Esterilización en estufa de calor seco, dentro de sobres sellados (alicates, empujadores y fresas).
+  4. El sobre esterilizado se abre delante de la clienta al empezar el turno.
+  5. Lima con base metálica y abrasivo descartable: cada clienta tiene el suyo.
+  6. Guantes, mascarilla, toallas descartables; desinfección de la mesa y de las manos.
+
+## 6. Preguntas frecuentes
+
+**¿Qué es la manicura rusa?**
+Es una manicura en seco y combinada: la cutícula se trabaja con torno y fresas finas y se recorta con alicate. Así el esmalte entra bien al ras. El resultado se ve prolijo y crece sin que se note.
+
+**¿Cuánto dura?**
+Entre 3 y 4 semanas sin despegarse. Se recomienda volver cada 3–4 semanas para mantener la forma.
+
+**¿Duele?**
+No. Daria trabaja con cuidado, sin lastimar la piel. Si algo molesta, se avisa y ajusta.
+
+**¿Cómo se esteriliza el instrumental?**
+Desinfección, limpieza y esterilización en estufa de calor seco, en sobre sellado que se abre delante de la clienta. La base de la lima es metálica y el abrasivo es descartable.
+
+**¿Cómo reservo y cómo pago?**
+Por WhatsApp (+54 9 11 3300-9473). Se paga en el turno: efectivo, transferencia o Mercado Pago.
+
+**¿Y si no puedo ir?**
+Avisar con 24 h de anticipación y se reprograma sin problema.
+
+**¿Dónde queda?**
+En Barrio Miguel Muñoz, cerca de Av. General Cárcano, Villa Carlos Paz. Es un estudio particular: la dirección exacta se envía al confirmar el turno.
+
+## 7. Enlaces
+
+- Sitio web: https://liagr03-spec.github.io/manicura-rusa/
+- Precios en el sitio: https://liagr03-spec.github.io/manicura-rusa/#servicios
+- Trabajos: https://liagr03-spec.github.io/manicura-rusa/#trabajos
+- Higiene: https://liagr03-spec.github.io/manicura-rusa/#higiene
+- Preguntas frecuentes: https://liagr03-spec.github.io/manicura-rusa/#preguntas
+- Contacto y mapa de la zona: https://liagr03-spec.github.io/manicura-rusa/#contacto
+- Instagram: https://instagram.com/manicura_ru
+- WhatsApp: https://wa.me/5491133009473

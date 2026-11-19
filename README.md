@@ -36,6 +36,9 @@ https://liagr03-spec.github.io/manicura-rusa/
 
 ```text
 ├── index.html          # Главная страница (стили, скрипты, SEO Schema.org, Open Graph)
+├── robots.txt / sitemap.xml
+├── llms.txt          # Краткая информация для нейросетей (услуги, запись)
+├── llms-full.txt     # Полная информация для нейросетей (прайс, FAQ, шаблон записи)
 └── assets/
     ├── stock/          # 12 фото сайта (обложка, портрет, студия, стерилизация, отзывы)
     └── works/          # 15 фото работ из карусели портфолио

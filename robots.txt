@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+# Resumen para IA: https://liagr03-spec.github.io/manicura-rusa/llms.txt
+# Información completa para IA: https://liagr03-spec.github.io/manicura-rusa/llms-full.txt
+
 Sitemap: https://liagr03-spec.github.io/manicura-rusa/sitemap.xml
