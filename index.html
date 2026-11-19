@@ -544,9 +544,9 @@
   addEventListener('load',()=>{
     if(!window.L || !document.getElementById('zone-map')) return;
     const center=[-31.4305,-64.5065];
-    const map=L.map('zone-map',{center,zoom:15,minZoom:12,maxZoom:17,zoomControl:false,attributionControl:false,scrollWheelZoom:false});
+    const map=L.map('zone-map',{center,zoom:12,minZoom:10,maxZoom:16,zoomControl:false,attributionControl:false,scrollWheelZoom:false});
     L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{subdomains:'abcd',maxZoom:19}).addTo(map);
-    L.circle(center,{radius:350,color:'#7D1D22',weight:2,dashArray:'6 5',fillColor:'#7D1D22',fillOpacity:.22}).addTo(map);
+    L.circle(center,{radius:1700,color:'#7D1D22',weight:2,dashArray:'6 5',fillColor:'#7D1D22',fillOpacity:.2}).addTo(map);
     document.getElementById('zm-in').addEventListener('click',()=>map.zoomIn());
     document.getElementById('zm-out').addEventListener('click',()=>map.zoomOut());
   });
