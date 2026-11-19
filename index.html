@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Manicura rusa en Villa Carlos Paz · Daria · @manicura_ru</title>
 <meta name="description" content="Manicura rusa en Villa Carlos Paz con Daria: técnica en seco, esmaltado bajo la cutícula que dura 3–4 semanas, instrumental esterilizado. Reservá por WhatsApp.">
-<meta name="robots" content="noindex">
 <meta name="theme-color" content="#2A1C16">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Manicura rusa en Villa Carlos Paz · Daria">
@@ -243,13 +242,16 @@
   .cta .b-alt{background:var(--choco2);color:var(--cream-on-dark);margin-top:8px}
   .cta .b-alt:hover{background:var(--choco)}
   .foot{background:var(--choco2);color:var(--cream-on-dark);padding:26px 22px 34px;padding-bottom:max(34px,env(safe-area-inset-bottom))}
-  .map{position:relative;height:150px;overflow:hidden;background:var(--choco)}
+  .map{position:relative;display:block;height:215px;border-radius:14px;overflow:hidden;background:#1C1918;border:1px solid var(--cl)}
   .map svg{position:absolute;inset:0;width:100%;height:100%}
-  .map .pin{position:absolute;left:50%;top:44%;transform:translate(-50%,-100%);background:var(--acc-d);color:var(--on-acc-d);font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:6px 10px;white-space:nowrap}
-  .map .pin::after{content:"";position:absolute;left:50%;bottom:-5px;transform:translateX(-50%) rotate(45deg);width:9px;height:9px;background:var(--acc-d)}
+  .map .zone{position:absolute;left:52%;top:54%;transform:translate(-50%,-50%);width:116px;height:116px;border-radius:50%;background:rgba(125,29,34,.28);border:1.5px dashed #D39A9C;box-shadow:0 0 0 16px rgba(125,29,34,.12);pointer-events:none}
+  .map .zone::after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:42px;height:42px;border-radius:50%;background:rgba(211,154,156,.22)}
+  .map .pin{position:absolute;left:50%;top:12px;transform:translateX(-50%);background:rgba(21,20,19,.88);backdrop-filter:blur(6px);color:var(--cream-on-dark);font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:7px 12px;border-radius:999px;border:1px solid rgba(211,154,156,.35);white-space:nowrap;pointer-events:none}
+  .map .open-map{position:absolute;right:10px;bottom:10px;background:var(--acc-d);color:var(--on-acc-d);font-size:8.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:6px 10px;border-radius:999px;pointer-events:none}
   .foot .info{margin-top:18px;border-top:1px solid var(--cl);text-align:center}
   .foot .info div{padding:12px 0;font-size:10px;letter-spacing:.12em;text-transform:uppercase;line-height:1.6;opacity:.85}
-  .foot .info b{display:block;font-family:var(--head);font-weight:500;letter-spacing:-.02em;font-size:15px;letter-spacing:.06em}
+  .foot .info b{display:block;font-family:var(--head);font-weight:500;font-size:15px;letter-spacing:.06em}
+  .foot .info small{display:block;font-size:9.5px;letter-spacing:.08em;text-transform:none;color:var(--hl);margin-top:4px;opacity:.95}
   .slogan{font-family:var(--serif);font-style:italic;font-size:20px;text-align:center;color:var(--hl);margin-top:22px}
   .copy{text-align:center;font-size:9.5px;letter-spacing:.14em;opacity:.4;margin-top:14px;text-transform:uppercase}
 
@@ -261,9 +263,6 @@
     .rv{opacity:1;transform:none;transition:none}
     .menu,.menu nav a{transition:none}
   }
-  .draft{position:relative;z-index:50;margin:0;background:var(--ink);color:var(--cream-on-dark);text-align:center;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;padding:7px 16px}
-  .draft~.bar{top:28px}
-  .bar.solid{top:0}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NailSalon","name":"Manicura rusa · Daria","description":"Manicura rusa en Villa Carlos Paz","telephone":"+5491133009473","address":{"@type":"PostalAddress","addressLocality":"Villa Carlos Paz","addressRegion":"Córdoba","addressCountry":"AR"},"sameAs":["https://instagram.com/manicura_ru"],"priceRange":"$1.000–$40.000"}
@@ -272,7 +271,10 @@
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"¿Qué es la manicura rusa?","acceptedAnswer":{"@type":"Answer","text":"Es una manicura en seco y combinada: trabajo la cutícula con torno y fresas finas y la recorto con alicate. Así el esmalte entra bien al ras. El resultado se ve prolijo y crece sin que se note."}},
 {"@type":"Question","name":"¿Cuánto dura?","acceptedAnswer":{"@type":"Answer","text":"Entre 3 y 4 semanas sin despegarse."}},
-{"@type":"Question","name":"¿Duele?","acceptedAnswer":{"@type":"Answer","text":"No. Trabajo con cuidado, sin lastimar la piel."}}
+{"@type":"Question","name":"¿Duele?","acceptedAnswer":{"@type":"Answer","text":"No. Trabajo con cuidado, sin lastimar la piel."}},
+{"@type":"Question","name":"¿Cómo esterilizás el instrumental?","acceptedAnswer":{"@type":"Answer","text":"Desinfección, limpieza y esterilización en estufa de calor seco, en sobre sellado que abro delante de vos. La base de la lima es metálica y el abrasivo es descartable: cada clienta tiene el suyo."}},
+{"@type":"Question","name":"¿Cómo reservo y cómo pago?","acceptedAnswer":{"@type":"Answer","text":"Reservás por WhatsApp. Pagás en el turno en efectivo, transferencia o Mercado Pago."}},
+{"@type":"Question","name":"¿Y si no puedo ir?","acceptedAnswer":{"@type":"Answer","text":"Avisame con 24 h de anticipación y reprogramamos sin problema."}}
 ]}
 </script>
 </head>
@@ -283,7 +285,6 @@
   <symbol id="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
 </svg>
 
-<p class="draft">Borrador · contenido de ejemplo</p>
 <header class="bar" id="bar">
   <a class="logo" href="#top">MANICURA_RU</a>
   <a class="ib" href="https://wa.me/5491133009473?text=Hola%20Daria!%20Quiero%20reservar%20un%20turno" aria-label="WhatsApp"><svg class="ic"><use href="#wa"/></svg></a>
@@ -318,7 +319,7 @@
     <div class="meta"><div><b>+10 años</b>de experiencia</div><div><strong>Villa Carlos Paz</strong>Córdoba, Argentina</div></div>
     <div class="ph"><img src="assets/stock/silver-almond.jpg" width="1054" height="1400" alt="Uñas almendradas nude con líneas plateadas cromadas" fetchpriority="high"></div>
     <div class="hero-foot">
-      <p class="q">[Uñas <b>prolijas</b> que duran un mes entero. Manicura combinada.]</p>
+      <p class="q">Uñas <b>prolijas</b> que duran un mes entero. Manicura combinada.</p>
       <a class="b b-rose" href="https://wa.me/5491133009473?text=Hola%20Daria!%20Quiero%20reservar%20un%20turno"><span class="b-ic"><svg class="ic"><use href="#wa"/></svg>Reservar turno con Daria</span><i>⟶</i></a>
     </div>
   </section>
@@ -405,22 +406,22 @@
   <!-- OPINIONES -->
   <section class="op" id="opiniones">
     <h2 class="H rv">Opiniones</h2>
-    <div class="rate rv"><b>5.0</b><div><span class="stars" aria-label="5 estrellas">★★★★★</span><p>[N] opiniones<br>en Google</p></div></div>
+    <div class="rate rv"><b>5.0</b><div><span class="stars" aria-label="5 estrellas">★★★★★</span><p>Opiniones de<br>mis clientas</p></div></div>
     <div class="rev-list">
-      <button class="rev rv" type="button" data-k="0"><img src="assets/stock/process-file.jpg" width="933" height="1400" loading="lazy" alt="Kapping en gel"><span class="t"><span class="stars" aria-label="5 estrellas">★★★★★</span><blockquote>Las uñas más lindas que tuve. ¡Y duran un montón! Fui por primera vez por recomendación de una amiga y no pensaba que la manicura rusa fuera tan distinta. Daria me explicó todo el proceso, trabajó con muchísimo cuidado y no me dolió nada. Ya pasaron cuatro semanas y el esmalte sigue perfecto. Vuelvo sí o sí.</blockquote><cite>Valentina · Kapping en gel · reseña de ejemplo</cite><span class="more">Leer más <i>⟶</i></span></span></button>
-      <button class="rev rv" type="button" data-k="1"><img src="assets/stock/french-long.jpg" width="1000" height="1334" loading="lazy" alt="Esculpidas francesa larga"><span class="t"><span class="stars" aria-label="5 estrellas">★★★★★</span><blockquote>Forma perfecta, exactamente lo que le pedí.</blockquote><cite>Sofía · Esculpidas · reseña de ejemplo</cite><span class="more">Leer más <i>⟶</i></span></span></button>
-      <button class="rev rv" type="button" data-k="2"><img src="assets/works/mariposa.jpg" width="1080" height="1086" loading="lazy" alt="Nail art mariposa"><span class="t"><span class="stars" aria-label="5 estrellas">★★★★★</span><blockquote>Daria tiene una paciencia y un pulso increíbles. Le mostré una foto de Pinterest bastante complicada y la hizo todavía más linda. Además el lugar es súper limpio, abre el instrumental esterilizado delante tuyo y eso da mucha tranquilidad.</blockquote><cite>Camila · Nail art · reseña de ejemplo</cite><span class="more">Leer más <i>⟶</i></span></span></button>
+      <button class="rev rv" type="button" data-k="0"><img src="assets/stock/process-file.jpg" width="933" height="1400" loading="lazy" alt="Kapping en gel"><span class="t"><span class="stars" aria-label="5 estrellas">★★★★★</span><blockquote>Las uñas más lindas que tuve. ¡Y duran un montón! Fui por primera vez por recomendación de una amiga y no pensaba que la manicura rusa fuera tan distinta. Daria me explicó todo el proceso, trabajó con muchísimo cuidado y no me dolió nada. Ya pasaron cuatro semanas y el esmalte sigue perfecto. Vuelvo sí o sí.</blockquote><cite>Valentina · Kapping en gel</cite><span class="more">Leer más <i>⟶</i></span></span></button>
+      <button class="rev rv" type="button" data-k="1"><img src="assets/stock/french-long.jpg" width="1000" height="1334" loading="lazy" alt="Esculpidas francesa larga"><span class="t"><span class="stars" aria-label="5 estrellas">★★★★★</span><blockquote>Forma perfecta, exactamente lo que le pedí.</blockquote><cite>Sofía · Esculpidas</cite><span class="more">Leer más <i>⟶</i></span></span></button>
+      <button class="rev rv" type="button" data-k="2"><img src="assets/works/mariposa.jpg" width="1080" height="1086" loading="lazy" alt="Nail art mariposa"><span class="t"><span class="stars" aria-label="5 estrellas">★★★★★</span><blockquote>Daria tiene una paciencia y un pulso increíbles. Le mostré una foto de Pinterest bastante complicada y la hizo todavía más linda. Además el lugar es súper limpio, abre el instrumental esterilizado delante tuyo y eso da mucha tranquilidad.</blockquote><cite>Camila · Nail art</cite><span class="more">Leer más <i>⟶</i></span></span></button>
     </div>
     <button class="b-out rv" type="button" data-k="0">Ver todas las opiniones · 6 <i>⟶</i></button>
     <div class="story" id="story" role="dialog" aria-modal="true" aria-label="Opiniones" hidden>
       <div class="s-head"><div class="s-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div><button class="s-x" type="button" aria-label="Cerrar">✕</button></div>
       <div class="s-track">
-        <figure class="slide"><img src="assets/stock/process-file.jpg" width="933" height="1400" loading="lazy" alt="Kapping en gel"><span class="stars" aria-label="5 estrellas">★★★★★</span><blockquote>Las uñas más lindas que tuve. ¡Y duran un montón! Fui por primera vez por recomendación de una amiga y no pensaba que la manicura rusa fuera tan distinta. Daria me explicó todo el proceso, trabajó con muchísimo cuidado y no me dolió nada. Ya pasaron cuatro semanas y el esmalte sigue perfecto. Vuelvo sí o sí.</blockquote><cite>Valentina · Kapping en gel · reseña de ejemplo</cite></figure>
-        <figure class="slide"><img src="assets/stock/french-long.jpg" width="1000" height="1334" loading="lazy" alt="Esculpidas francesa larga"><span class="stars" aria-label="5 estrellas">★★★★★</span><blockquote>Forma perfecta, exactamente lo que le pedí.</blockquote><cite>Sofía · Esculpidas · reseña de ejemplo</cite></figure>
-        <figure class="slide"><img src="assets/works/mariposa.jpg" width="1080" height="1086" loading="lazy" alt="Nail art mariposa"><span class="stars" aria-label="5 estrellas">★★★★★</span><blockquote>Daria tiene una paciencia y un pulso increíbles. Le mostré una foto de Pinterest bastante complicada y la hizo todavía más linda. Además el lugar es súper limpio, abre el instrumental esterilizado delante tuyo y eso da mucha tranquilidad.</blockquote><cite>Camila · Nail art · reseña de ejemplo</cite></figure>
-        <figure class="slide shot"><span class="src">Captura · WhatsApp</span><img src="assets/stock/thanks-chat.jpg" width="900" height="1060" loading="lazy" alt="Mensaje de agradecimiento por WhatsApp"><cite>Romina · por WhatsApp · reseña de ejemplo</cite></figure>
-        <figure class="slide"><img src="assets/stock/nude-almond.jpg" width="1000" height="1250" loading="lazy" alt="Manicura rusa almendra nude"><span class="stars" aria-label="5 estrellas">★★★★★</span><blockquote>Tenía las cutículas muy dañadas y en dos visitas cambiaron por completo. Me encanta lo cuidadosa que es y que todo quede tan prolijo.</blockquote><cite>Lucía · Manicura rusa · reseña de ejemplo</cite></figure>
-        <figure class="slide"><img src="assets/stock/milky-square.jpg" width="787" height="1400" loading="lazy" alt="Kapping milky"><span class="stars" aria-label="5 estrellas">★★★★★</span><blockquote>Atención impecable de principio a fin. Puntual, cálida y muy profesional. El resultado dura semanas y se ve natural, justo lo que buscaba. Recomiendo pedir turno con tiempo porque tiene la agenda llena, y con razón.</blockquote><cite>Martina · Kapping + esmaltado · reseña de ejemplo</cite></figure>
+        <figure class="slide"><img src="assets/stock/process-file.jpg" width="933" height="1400" loading="lazy" alt="Kapping en gel"><span class="stars" aria-label="5 estrellas">★★★★★</span><blockquote>Las uñas más lindas que tuve. ¡Y duran un montón! Fui por primera vez por recomendación de una amiga y no pensaba que la manicura rusa fuera tan distinta. Daria me explicó todo el proceso, trabajó con muchísimo cuidado y no me dolió nada. Ya pasaron cuatro semanas y el esmalte sigue perfecto. Vuelvo sí o sí.</blockquote><cite>Valentina · Kapping en gel</cite></figure>
+        <figure class="slide"><img src="assets/stock/french-long.jpg" width="1000" height="1334" loading="lazy" alt="Esculpidas francesa larga"><span class="stars" aria-label="5 estrellas">★★★★★</span><blockquote>Forma perfecta, exactamente lo que le pedí.</blockquote><cite>Sofía · Esculpidas</cite></figure>
+        <figure class="slide"><img src="assets/works/mariposa.jpg" width="1080" height="1086" loading="lazy" alt="Nail art mariposa"><span class="stars" aria-label="5 estrellas">★★★★★</span><blockquote>Daria tiene una paciencia y un pulso increíbles. Le mostré una foto de Pinterest bastante complicada y la hizo todavía más linda. Además el lugar es súper limpio, abre el instrumental esterilizado delante tuyo y eso da mucha tranquilidad.</blockquote><cite>Camila · Nail art</cite></figure>
+        <figure class="slide shot"><span class="src">Captura · WhatsApp</span><img src="assets/stock/thanks-chat.jpg" width="900" height="1060" loading="lazy" alt="Mensaje de agradecimiento por WhatsApp"><cite>Romina · por WhatsApp</cite></figure>
+        <figure class="slide"><img src="assets/stock/nude-almond.jpg" width="1000" height="1250" loading="lazy" alt="Manicura rusa almendra nude"><span class="stars" aria-label="5 estrellas">★★★★★</span><blockquote>Tenía las cutículas muy dañadas y en dos visitas cambiaron por completo. Me encanta lo cuidadosa que es y que todo quede tan prolijo.</blockquote><cite>Lucía · Manicura rusa</cite></figure>
+        <figure class="slide"><img src="assets/stock/milky-square.jpg" width="787" height="1400" loading="lazy" alt="Kapping milky"><span class="stars" aria-label="5 estrellas">★★★★★</span><blockquote>Atención impecable de principio a fin. Puntual, cálida y muy profesional. El resultado dura semanas y se ve natural, justo lo que buscaba. Recomiendo pedir turno con tiempo porque tiene la agenda llena, y con razón.</blockquote><cite>Martina · Kapping + esmaltado</cite></figure>
       </div>
       <button class="s-nav s-prev" type="button" aria-label="Anterior"></button><button class="s-nav s-next" type="button" aria-label="Siguiente"></button>
     </div>
@@ -435,8 +436,8 @@
       <details><summary><em>02</em><h3>¿Cuánto dura?</h3><b>+</b></summary><p class="ans">Entre 3 y 4 semanas sin despegarse. Te recomiendo volver cada 3–4 semanas para mantener la forma.</p></details>
       <details><summary><em>03</em><h3>¿Duele?</h3><b>+</b></summary><p class="ans">No. Trabajo con cuidado, sin lastimar la piel. Si algo te molesta, me avisás y ajusto.</p></details>
       <details><summary><em>04</em><h3>¿Cómo esterilizás el instrumental?</h3><b>+</b></summary><p class="ans">Desinfección, limpieza y esterilización en estufa de calor seco, en sobre sellado que abro delante de vos. La base de la lima es metálica y el abrasivo es descartable: cada clienta tiene el suyo.</p></details>
-      <details><summary><em>05</em><h3>¿Cómo reservo y cómo pago?</h3><b>+</b></summary><p class="ans">Reservás por WhatsApp. Pagás en el turno en [efectivo / transferencia / Mercado Pago].</p></details>
-      <details><summary><em>06</em><h3>¿Y si no puedo ir?</h3><b>+</b></summary><p class="ans">Avisame con [24 h] de anticipación y reprogramamos sin problema.</p></details>
+      <details><summary><em>05</em><h3>¿Cómo reservo y cómo pago?</h3><b>+</b></summary><p class="ans">Reservás por WhatsApp. Pagás en el turno en efectivo, transferencia o Mercado Pago.</p></details>
+      <details><summary><em>06</em><h3>¿Y si no puedo ir?</h3><b>+</b></summary><p class="ans">Avisame con 24 h de anticipación y reprogramamos sin problema.</p></details>
     </div>
     <div class="more"><span>¿Tenés otra pregunta?</span><a href="https://wa.me/5491133009473?text=Hola%20Daria!%20Tengo%20una%20pregunta">Escribime ⟶</a></div>
   </section>
@@ -447,17 +448,50 @@
     <p>Escribime por WhatsApp y te paso los horarios libres.</p>
     <a class="b" href="https://wa.me/5491133009473?text=Hola%20Daria!%20Quiero%20reservar%20un%20turno"><span style="display:flex;gap:10px;align-items:center"><svg class="ic"><use href="#wa"/></svg>Escribir a Daria</span><i>⟶</i></a>
     <a class="b b-alt" href="https://instagram.com/manicura_ru"><span style="display:flex;gap:10px;align-items:center"><svg class="ic"><use href="#ig"/></svg>Instagram</span><i>⟶</i></a>
-    <a class="b b-alt" href="https://maps.google.com/?q=Villa+Carlos+Paz,+C%C3%B3rdoba"><span style="display:flex;gap:10px;align-items:center"><svg class="ic"><use href="#pin"/></svg>Cómo llegar</span><i>⟶</i></a>
+    <a class="b b-alt" href="https://www.google.com/maps/place/Villa+Carlos+Paz,+C%C3%B3rdoba,+Argentina/" target="_blank" rel="noopener"><span style="display:flex;gap:10px;align-items:center"><svg class="ic"><use href="#pin"/></svg>Cómo llegar · Zona</span><i>⟶</i></a>
   </section>
 </main>
 
 <footer class="foot">
-  <div class="map" role="img" aria-label="Mapa: Villa Carlos Paz, Córdoba">
-    <svg viewBox="0 0 346 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g stroke="rgba(244,238,231,.12)" stroke-width="7" fill="none"><path d="M-10 40 L360 20"/><path d="M-10 110 L360 95"/><path d="M60 -10 L90 160"/><path d="M210 -10 L240 160"/><path d="M300 -10 L320 160"/></g><g stroke="rgba(244,238,231,.06)" stroke-width="3" fill="none"><path d="M-10 75 L360 58"/><path d="M140 -10 L165 160"/></g></svg>
-    <span class="pin">Daria · Villa Carlos Paz</span>
-  </div>
+  <a class="map" href="https://www.google.com/maps/place/Villa+Carlos+Paz,+C%C3%B3rdoba,+Argentina/" target="_blank" rel="noopener" aria-label="Ver zona en Google Maps: Villa Carlos Paz, Barrio Miguel Muñoz">
+    <svg viewBox="0 0 380 215" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <!-- кварталы Barrio Miguel Muñoz -->
+      <rect width="380" height="215" fill="#1C1918"/>
+      <g fill="#25211F">
+        <rect x="14" y="18" width="66" height="44" rx="3"/><rect x="14" y="72" width="66" height="52" rx="3"/><rect x="14" y="134" width="66" height="62" rx="3"/>
+        <rect x="96" y="18" width="76" height="44" rx="3"/><rect x="96" y="72" width="76" height="52" rx="3"/><rect x="96" y="134" width="76" height="62" rx="3"/>
+        <rect x="184" y="18" width="78" height="44" rx="3"/><rect x="184" y="72" width="78" height="52" rx="3"/><rect x="184" y="134" width="78" height="62" rx="3"/>
+        <rect x="274" y="18" width="54" height="44" rx="3"/><rect x="274" y="72" width="54" height="52" rx="3"/><rect x="274" y="134" width="54" height="62" rx="3"/>
+      </g>
+      <!-- Río San Antonio справа -->
+      <path d="M348 -10 C338 55, 362 125, 344 225 L390 225 L390 -10 Z" fill="#151E24" opacity=".85"/>
+      <path d="M348 -10 C338 55, 362 125, 344 225" stroke="rgba(160,195,215,.22)" stroke-width="2" fill="none"/>
+      <!-- улицы сетки -->
+      <g stroke="rgba(244,238,231,.11)" stroke-width="5" fill="none">
+        <path d="M0 67 L345 67"/><path d="M0 129 L345 129"/><path d="M0 198 L345 198"/>
+        <path d="M178 0 L178 215"/><path d="M268 0 L268 215"/>
+      </g>
+      <!-- главная артерия Av. Ramón J. Cárcano и улица Int. J. García -->
+      <path d="M88 0 L88 215" stroke="rgba(244,238,231,.24)" stroke-width="9" fill="none"/>
+      <path d="M0 129 L345 129" stroke="rgba(211,154,156,.28)" stroke-width="6" fill="none"/>
+      <!-- подписи улиц -->
+      <g fill="rgba(244,238,231,.42)" font-family="Montserrat,sans-serif" font-size="7.5" font-weight="600" letter-spacing="1.4">
+        <text x="100" y="62">JUAN B. JUSTO</text>
+        <text x="148" y="124" fill="rgba(244,238,231,.72)">INT. J. GARCÍA</text>
+        <text x="100" y="192">MIGUEL MUÑOZ</text>
+        <text x="83" y="176" transform="rotate(-90 83 176)">AV. GRAL. CÁRCANO</text>
+      </g>
+    </svg>
+    <span class="zone" aria-hidden="true"></span>
+    <span class="pin">Zona · Villa Carlos Paz · B° Miguel Muñoz</span>
+    <span class="open-map">Abrir mapa ↗</span>
+  </a>
   <div class="info">
-    <div><b>Villa Carlos Paz</b>Córdoba · Argentina</div>
+    <div>
+      <b>Villa Carlos Paz · B° Miguel Muñoz</b>
+      Zona Int. J. García · Córdoba, Argentina
+      <small>La dirección exacta se envía al confirmar el turno</small>
+    </div>
   </div>
   <p class="slogan">La belleza está en los detalles</p>
   <p class="copy">© 2026 Manicura rusa · Daria</p>
