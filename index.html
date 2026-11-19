@@ -538,7 +538,7 @@
     const center=[-31.4305,-64.5065];
     const map=L.map('zone-map',{center,zoom:13,minZoom:10,maxZoom:17,zoomControl:false,attributionControl:false,scrollWheelZoom:true});
     L.tileLayer('https://mt{s}.google.com/vt/lyrs=m&hl=es&x={x}&y={y}&z={z}',{subdomains:['0','1','2','3'],maxZoom:19}).addTo(map);
-    L.circle(center,{radius:1500,color:'#D39A9C',weight:2,dashArray:'6 5',fillColor:'#7D1D22',fillOpacity:.32}).addTo(map);
+    L.circle(center,{radius:1000,color:'#D39A9C',weight:2,dashArray:'6 5',fillColor:'#7D1D22',fillOpacity:.32}).addTo(map);
     document.getElementById('zm-in').addEventListener('click',()=>map.zoomIn());
     document.getElementById('zm-out').addEventListener('click',()=>map.zoomOut());
     setTimeout(()=>map.invalidateSize(),250);
