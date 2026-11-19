@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://liagr03-spec.github.io/manicura-rusa/sitemap.xml
