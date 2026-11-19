@@ -13,7 +13,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Inter+Tight:wght@400;500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
 <link rel="preload" as="image" href="assets/stock/silver-almond.jpg" fetchpriority="high">
 <style>
   :root{
@@ -243,16 +242,8 @@
   .cta .b-alt{background:var(--choco2);color:var(--cream-on-dark);margin-top:8px}
   .cta .b-alt:hover{background:var(--choco)}
   .foot{background:var(--choco2);color:var(--cream-on-dark);padding:26px 22px 34px;padding-bottom:max(34px,env(safe-area-inset-bottom))}
-  .map{position:relative;display:block;height:290px;border-radius:14px;overflow:hidden;background:#e5e3df;border:1px solid var(--cl)}
-  .map svg.map-fb{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-  #zone-map{position:absolute;inset:0;width:100%;height:100%;z-index:1;background:#e5e3df}
-  .leaflet-container img{max-width:none!important;max-height:none!important}
-  .map .pin{position:absolute;left:50%;top:12px;transform:translateX(-50%);z-index:450;background:rgba(21,20,19,.88);backdrop-filter:blur(6px);color:var(--cream-on-dark);font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:7px 12px;border-radius:999px;border:1px solid rgba(211,154,156,.35);white-space:nowrap;pointer-events:none}
-  .map-zoom{position:absolute;left:10px;bottom:10px;z-index:450;display:flex;gap:6px}
-  .map-zoom button{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.22);background:rgba(21,20,19,.88);backdrop-filter:blur(6px);color:var(--cream-on-dark);font-family:var(--head);font-size:18px;line-height:1;display:grid;place-items:center;cursor:pointer;touch-action:manipulation;transition:background .2s,border-color .2s}
-  .map-zoom button:hover{background:var(--acc-d);border-color:var(--acc-d)}
-  .map .open-map{position:absolute;right:10px;bottom:10px;z-index:450;background:var(--acc-d);color:var(--on-acc-d);font-size:8.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:8px 12px;border-radius:999px;transition:filter .2s}
-  .map .open-map:hover{filter:brightness(1.1)}
+  .map{position:relative;display:block;height:290px;border-radius:14px;overflow:hidden;background:#1A1817;border:1px solid var(--cl)}
+  .map iframe{width:100%;height:100%;border:0;display:block;filter:invert(90%) hue-rotate(180deg) brightness(95%) contrast(92%)}
   .foot .info{margin-top:18px;border-top:1px solid var(--cl);text-align:center}
   .foot .info div{padding:12px 0;font-size:10px;letter-spacing:.12em;text-transform:uppercase;line-height:1.6;opacity:.85}
   .foot .info b{display:block;font-family:var(--head);font-weight:500;font-size:15px;letter-spacing:.06em}
@@ -458,21 +449,8 @@
 </main>
 
 <footer class="foot">
-  <div class="map" role="region" aria-label="Mapa interactivo: Barrio Miguel Muñoz, Villa Carlos Paz">
-    <svg class="map-fb" viewBox="0 0 380 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <rect width="380" height="260" fill="#1C1918"/>
-      <g stroke="rgba(244,238,231,.11)" stroke-width="5" fill="none">
-        <path d="M0 78 L380 78"/><path d="M0 148 L380 148"/><path d="M0 218 L380 218"/>
-        <path d="M90 0 L90 260"/><path d="M190 0 L190 260"/><path d="M290 0 L290 260"/>
-      </g>
-    </svg>
-    <div id="zone-map"></div>
-    <span class="pin">Barrio Miguel Muñoz · Villa Carlos Paz</span>
-    <div class="map-zoom">
-      <button type="button" id="zm-in" aria-label="Acercar mapa">+</button>
-      <button type="button" id="zm-out" aria-label="Alejar mapa">−</button>
-    </div>
-    <a class="open-map" href="https://www.google.com/maps/place/Int.+J.+Garc%C3%ADa,+Villa+Carlos+Paz,+C%C3%B3rdoba/" target="_blank" rel="noopener">Google Maps ↗</a>
+  <div class="map" role="region" aria-label="Google Maps: Barrio Miguel Muñoz, Villa Carlos Paz">
+    <iframe title="Google Maps: Barrio Miguel Muñoz, Villa Carlos Paz" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Int.+J.+Garc%C3%ADa,+Villa+Carlos+Paz,+C%C3%B3rdoba&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"></iframe>
   </div>
   <div class="info">
     <div>
@@ -539,19 +517,6 @@
   // «Leer más» показываем только у длинных отзывов
   const fit=()=>document.querySelectorAll('.rev').forEach(r=>{ const q=r.querySelector('blockquote'); r.querySelector('.more').style.display=q.scrollHeight>q.clientHeight+8?'':'none'; });
   document.fonts.ready.then(fit); addEventListener('load',fit); addEventListener('resize',fit);
-</script>
-<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-<script>
-  addEventListener('load',()=>{
-    if(!window.L || !document.getElementById('zone-map')) return;
-    const center=[-31.4305,-64.5065];
-    const map=L.map('zone-map',{center,zoom:13,minZoom:10,maxZoom:18,zoomControl:false,attributionControl:false,scrollWheelZoom:true});
-    L.tileLayer('https://mt{s}.google.com/vt/lyrs=m&hl=es&x={x}&y={y}&z={z}',{subdomains:['0','1','2','3'],maxZoom:19}).addTo(map);
-    L.circle(center,{radius:1600,color:'#7D1D22',weight:2,dashArray:'6 5',fillColor:'#7D1D22',fillOpacity:.18}).addTo(map);
-    document.getElementById('zm-in').addEventListener('click',()=>map.zoomIn());
-    document.getElementById('zm-out').addEventListener('click',()=>map.zoomOut());
-    setTimeout(()=>map.invalidateSize(),250);
-  });
 </script>
 </body>
 </html>
