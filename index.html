@@ -231,7 +231,7 @@
   .b-out i{font-style:normal;font-size:14px}
 
   /* просмотр отзывов на весь экран, как сторис */
-  .story{position:fixed;top:0;bottom:0;left:50%;width:100%;max-width:480px;transform:translateX(-50%);z-index:60;background:var(--choco);color:var(--cream-on-dark);display:grid;grid-template-rows:auto 1fr;animation:sIn .3s var(--ease)}
+  .story{position:fixed;top:0;bottom:0;left:50%;width:100%;max-width:480px;transform:translateX(-50%);z-index:60;background:var(--choco);color:var(--cream-on-dark);display:grid;grid-template-rows:auto 1fr auto;animation:sIn .3s var(--ease)}
   .story[hidden]{display:none}
   @keyframes sIn{from{opacity:0}to{opacity:1}}
   .s-head{display:flex;align-items:center;gap:14px;padding:18px 22px 10px}
@@ -239,18 +239,20 @@
   .s-bars i{flex:1;height:2px;background:rgba(255,255,255,.25);transition:background .3s}
   .s-bars i.a{background:#fff}
   .s-x{width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.12);color:#fff;font-size:16px;cursor:pointer}
-  .s-track{display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior:contain;min-height:0}
+  .s-track{display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;min-height:0}
   .s-track::-webkit-scrollbar{display:none}
-  .slide{flex:0 0 100%;scroll-snap-align:start;overflow-y:auto;padding:6px 22px 36px;display:grid;align-content:start;gap:14px;overscroll-behavior:contain;margin:0}
-  .slide img{width:100%;aspect-ratio:1/1;object-fit:cover;height:auto}
+  .slide{flex:0 0 100%;width:100%;scroll-snap-align:start;overflow-y:auto;padding:6px 22px 20px;display:grid;align-content:start;gap:14px;overscroll-behavior-y:contain;margin:0}
+  .slide img{width:100%;aspect-ratio:1/1;object-fit:cover;height:auto;-webkit-user-drag:none;user-select:none}
   .slide.shot img{aspect-ratio:auto;border-radius:6px}
   .slide .src{font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--hl)}
   .slide .stars{color:var(--hl)}
   .slide blockquote{font-family:var(--serif);font-style:italic;font-size:21px;line-height:1.32}
   .slide cite{font-style:normal;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(245,243,240,.6)}
-  .s-nav{position:absolute;top:70px;bottom:0;width:28%;border:0;background:none;cursor:pointer;display:none}
-  .s-prev{left:0}.s-next{right:0}
-  @media(hover:hover) and (pointer:fine){.s-nav{display:block}}
+  .s-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 22px max(18px,env(safe-area-inset-bottom));border-top:1px solid var(--cl);background:var(--choco)}
+  .s-foot button{display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.06);color:var(--cream-on-dark);font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;touch-action:manipulation;transition:background .2s,border-color .2s,opacity .2s}
+  .s-foot button:hover{background:var(--acc-d);border-color:var(--acc-d)}
+  .s-foot button:disabled{opacity:.3;cursor:default;background:transparent;border-color:rgba(255,255,255,.15)}
+  .s-cnt{font-family:var(--head);font-size:13px;letter-spacing:.12em;color:var(--hl)}
 
   /* FAQ */
   .faq{background:var(--paper);margin-top:54px;padding-bottom:44px}
@@ -776,7 +778,11 @@
         <figure class="slide"><img src="assets/stock/nude-almond.jpg" width="1000" height="1250" loading="lazy" alt="Manicura rusa almendra nude"><span class="stars" aria-label="5 estrellas">★★★★★</span><blockquote>Tenía las cutículas muy dañadas y en dos visitas cambiaron por completo. Me encanta lo cuidadosa que es y que todo quede tan prolijo.</blockquote><cite>Lucía · Manicura rusa</cite></figure>
         <figure class="slide"><img src="assets/stock/milky-square.jpg" width="787" height="1400" loading="lazy" alt="Kapping milky"><span class="stars" aria-label="5 estrellas">★★★★★</span><blockquote>Atención impecable de principio a fin. Puntual, cálida y muy profesional. El resultado dura semanas y se ve natural, justo lo que buscaba. Recomiendo pedir turno con tiempo porque tiene la agenda llena, y con razón.</blockquote><cite>Martina · Kapping + esmaltado</cite></figure>
       </div>
-      <button class="s-nav s-prev" type="button" aria-label="Anterior"></button><button class="s-nav s-next" type="button" aria-label="Siguiente"></button>
+      <div class="s-foot">
+        <button class="s-prev" type="button" aria-label="Anterior">⟵ Anterior</button>
+        <span class="s-cnt" id="s-cnt">1 / 6</span>
+        <button class="s-next" type="button" aria-label="Siguiente">Siguiente ⟶</button>
+      </div>
     </div>
   </section>
 
@@ -874,20 +880,41 @@
   const qs=document.querySelectorAll('.faq details');
   qs.forEach(d=>d.addEventListener('toggle',()=>{ if(d.open) qs.forEach(o=>{ if(o!==d) o.open=false; }); }));
 
-  // отзывы: 3 последних в списке, все — в просмотре на весь экран (как сторис)
+  // отзывы: 3 последних в списке, все — в просмотре на весь экран (свайп + кнопки + стрелки)
   const story=document.getElementById('story'), track=story.querySelector('.s-track'), sbars=story.querySelectorAll('.s-bars i'), N=sbars.length;
-  const cur=()=>Math.round(track.scrollLeft/track.clientWidth);
-  const mark=()=>sbars.forEach((b,k)=>b.classList.toggle('a',k<=cur()));
-  const go=k=>track.scrollTo({left:Math.max(0,Math.min(N-1,k))*track.clientWidth,behavior:'smooth'});
+  const sPrev=story.querySelector('.s-prev'), sNext=story.querySelector('.s-next'), sCnt=document.getElementById('s-cnt');
+  let curIdx=0;
+  const syncStoryUI=idx=>{
+    curIdx=Math.max(0,Math.min(N-1,idx));
+    sbars.forEach((b,k)=>b.classList.toggle('a',k<=curIdx));
+    if(sCnt) sCnt.textContent=`${curIdx+1} / ${N}`;
+    if(sPrev) sPrev.disabled=curIdx===0;
+    if(sNext) sNext.disabled=curIdx===N-1;
+  };
+  const mark=()=>{
+    if(!track.clientWidth) return;
+    syncStoryUI(Math.round(track.scrollLeft/track.clientWidth));
+  };
+  const go=k=>{
+    const next=Math.max(0,Math.min(N-1,k));
+    syncStoryUI(next);
+    track.scrollTo({left:next*track.clientWidth,behavior:'smooth'});
+  };
   let opener=null;
-  const openStory=k=>{ story.hidden=false; document.body.classList.add('lock'); track.querySelectorAll('.slide').forEach(x=>x.scrollTop=0); track.scrollLeft=k*track.clientWidth; mark(); story.querySelector('.s-x').focus({preventScroll:true}); };
+  const openStory=k=>{
+    story.hidden=false; document.body.classList.add('lock');
+    track.querySelectorAll('.slide').forEach(x=>x.scrollTop=0);
+    syncStoryUI(k);
+    requestAnimationFrame(()=>{ track.scrollLeft=curIdx*track.clientWidth; mark(); });
+    story.querySelector('.s-x').focus({preventScroll:true});
+  };
   const closeStory=()=>{ story.hidden=true; document.body.classList.remove('lock'); if(opener) opener.focus({preventScroll:true}); };
   document.querySelectorAll('.op [data-k]').forEach(b=>b.addEventListener('click',()=>{ opener=b; openStory(+b.dataset.k); }));
   track.addEventListener('scroll',mark,{passive:true});
   story.querySelector('.s-x').addEventListener('click',closeStory);
-  story.querySelector('.s-prev').addEventListener('click',()=>go(cur()-1));
-  story.querySelector('.s-next').addEventListener('click',()=>go(cur()+1));
-  addEventListener('keydown',e=>{ if(story.hidden) return; if(e.key==='Escape') closeStory(); if(e.key==='ArrowRight') go(cur()+1); if(e.key==='ArrowLeft') go(cur()-1); });
+  sPrev.addEventListener('click',()=>go(curIdx-1));
+  sNext.addEventListener('click',()=>go(curIdx+1));
+  addEventListener('keydown',e=>{ if(story.hidden) return; if(e.key==='Escape') closeStory(); if(e.key==='ArrowRight') go(curIdx+1); if(e.key==='ArrowLeft') go(curIdx-1); });
   // «Leer más» показываем только у длинных отзывов
   const fit=()=>document.querySelectorAll('.rev').forEach(r=>{ const q=r.querySelector('blockquote'); r.querySelector('.more').style.display=q.scrollHeight>q.clientHeight+8?'':'none'; });
   document.fonts.ready.then(fit); addEventListener('load',fit); addEventListener('resize',fit);
